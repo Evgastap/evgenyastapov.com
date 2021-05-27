@@ -5,6 +5,11 @@ module.exports = {
     content: ["./src/**/*.html", "./src/**/*.jsx", "./src/**/*.js"],
   },
   theme: {
+    fontFamily: {
+      'handwriting': ['Satisfy'],
+      'lilita': ['Lilita One'],
+      'righteous': ['Righteous']
+    },
     extend: {},
   },
   variants: {},
