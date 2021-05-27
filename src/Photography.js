@@ -1,4 +1,4 @@
-import { AnimatePresence, AnimateSharedLayout, motion } from 'framer-motion'
+import { motion } from 'framer-motion'
 import React from 'react'
 
 // styles for the photography image
@@ -11,6 +11,8 @@ const photoImgStyle = {
 
 export default function Photography() {
     return (
-        <motion.div style={photoImgStyle} layoutId="photographyHero" className="w-screen h-screen"></motion.div>
+        <div className="h-screen">
+            <motion.div style={photoImgStyle} layoutId="photographyHero" className="w-screen h-1/2 sm:h-screen"></motion.div>
+        </div>
     )
 }

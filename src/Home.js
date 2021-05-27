@@ -1,9 +1,6 @@
 import React from 'react';
-import {
-    Link, 
-    withRouter
-} from 'react-router-dom';
-import { AnimatePresence, AnimateSharedLayout, motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
 // styles for the programming image
 const progImgStyle = {
@@ -42,23 +39,23 @@ export default function Home() {
         <div className="grid grid-rows-4 md:grid-cols-2 md:grid-rows-2 h-screen">
             <Link to="/photography">
                 <motion.div style={photoImgStyle} layoutId="photographyHero" className="w-full h-full flex justify-center items-center text-white text-3xl md:text-6xl font-handwriting">
-                    <motion.h1 whileHover={{ scale: 1.2 }}>Photography Evg</motion.h1>
+                    <motion.h1 whileHover={{ scale: 1.2 }} exit={{opacity: 0}}>Photography Evg</motion.h1>
                 </motion.div>
             </Link>
             <Link to="/programming">
-                <div style={progImgStyle} className="w-full h-full flex justify-center items-center text-white text-3xl md:text-6xl font-thin font-mono ">
+                <motion.div style={progImgStyle} layoutId="programmingHero" className="w-full h-full flex justify-center items-center text-white text-3xl md:text-6xl font-thin font-mono ">
                     Programming_Evg
-                    </div>
+                </motion.div>
             </Link>
             <Link to="/work">
-                <div style={workImgStyle} className="w-full h-full flex justify-center items-center text-white text-3xl md:text-6xl font-lilita">
+                <motion.div style={workImgStyle} layoutId="workHero" className="w-full h-full flex justify-center items-center text-white text-3xl md:text-6xl font-lilita">
                     Work Evg
-                    </div>
+                </motion.div>
             </Link>
             <Link to="/other">
-                <div style={otherImgStyle} className="w-full h-full flex justify-center items-center text-white text-3xl md:text-6xl font-righteous">
+                <motion.div style={otherImgStyle} layoutId="otherHero" className="w-full h-full flex justify-center items-center text-white text-3xl md:text-6xl font-righteous">
                     Other Evg
-                    </div>
+                </motion.div>
             </Link>
         </div>
     )
