@@ -1,5 +1,8 @@
 node_modules
 build
 
+.DS_Store
+src/index.css
+
 # Local Netlify folder
 .netlify
