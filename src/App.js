@@ -5,17 +5,17 @@ import Photography from './Photography';
 import Programming from './Programming';
 import Work from './Work';
 import Other from './Other';
-import { AnimateSharedLayout } from 'framer-motion';
+import { AnimateSharedLayout, AnimatePresence } from 'framer-motion';
 
 function App() {
   return (
     <Router>
       <AnimateSharedLayout type="crossfade">
-        <Route path="/photography" component={Photography} />
-        <Route path="/programming" component={Programming} />
-        <Route path="/work" component={Work} />
-        <Route path="/other" component={Other} />
-        <Route path="/" exact component={Home} />
+          <Route path="/photography" component={Photography} />
+          <Route path="/programming" component={Programming} />
+          <Route path="/work" component={Work} />
+          <Route path="/other" component={Other} />
+          <Route path="/" exact component={Home} />
       </AnimateSharedLayout>
     </Router>
   );
