@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import React from 'react'
+import ProgressiveImage from 'react-progressive-image';
 
 // styles for the work image
 const workImgStyle = {
@@ -12,7 +13,7 @@ const workImgStyle = {
 export default function Work() {
     return (
         <div className="h-screen">
-            <motion.div style={workImgStyle} layoutId="workHero" className="w-screen h-1/2 sm:h-screen"></motion.div>
+            <ProgressiveImage src="/work.jpg" delay={1500} placeholder="/work_mini.jpg">{src => <motion.img layoutId="workHero" src={src} className="max-w-full" alt="Work Evgeny" />}</ProgressiveImage>
         </div>
     )
 }

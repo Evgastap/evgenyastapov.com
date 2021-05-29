@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import React from 'react'
+import ProgressiveImage from 'react-progressive-image';
 
 // styles for the work image
 const otherImgStyle = {
@@ -12,7 +13,7 @@ const otherImgStyle = {
 export default function Other() {
     return (
         <div className="h-screen">
-            <motion.div style={otherImgStyle} layoutId="otherHero" className="w-screen h-1/2 sm:h-screen"></motion.div>
+            <ProgressiveImage src="/other.jpg" delay={1500} placeholder="/other_mini.jpg">{src => <motion.img layoutId="otherHero" src={src} className="h-full w-full" alt="Other Evgeny" />}</ProgressiveImage>
         </div>
     )
 }
