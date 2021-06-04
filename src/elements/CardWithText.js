@@ -6,7 +6,7 @@ function CardWithText(props) {
         <div class="mt-10">
             
             <div class="max-w-2xl mx-auto overflow-hidden bg-white rounded-lg shadow-md dark:bg-gray-800">
-            <a href={props.url}>
+            <a href={props.url} target="_blank">
                 <div className="w-full h-64 overflow-hidden">
                         <motion.img class="object-cover w-full max-h-full h-64" src={props.image} alt={props.title} whileHover={{ scale: 1.1 }} />
                 </div>
