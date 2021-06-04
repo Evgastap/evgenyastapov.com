@@ -8,7 +8,8 @@ module.exports = {
     fontFamily: {
       'handwriting': ['Satisfy'],
       'lilita': ['Lilita One'],
-      'righteous': ['Righteous']
+      'righteous': ['Righteous'],
+      'roboto': ['Roboto Mono'],
     },
     extend: {
       zIndex: {
