@@ -3,38 +3,6 @@ import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import ProgressiveImage from 'react-progressive-image'
 
-// styles for the programming image
-const progImgStyle = {
-    backgroundImage: "url(/programming.jpg)",
-    backgroundSize: "cover",
-    backgroundPositionX: "45%",
-    backgroundPositionY: "45%"
-}
-
-// styles for the photography image
-const photoImgStyle = {
-    backgroundImage: "url(/photography.jpg)",
-    backgroundSize: "cover",
-    backgroundPositionX: "40%",
-    backgroundPositionY: "80%",
-}
-
-// styles for the work image
-const workImgStyle = {
-    backgroundImage: "url(/work.jpg)",
-    backgroundSize: "cover",
-    backgroundPositionX: "65%",
-    backgroundPositionY: "40%"
-}
-
-// styles for the work image
-const otherImgStyle = {
-    backgroundImage: "url(/other.jpg)",
-    backgroundSize: "cover",
-    backgroundPositionX: "50%",
-    backgroundPositionY: "50%"
-}
-
 export default function Home() {
     return (
         <div className="grid grid-rows-4 md:grid-cols-2 md:grid-rows-2 h-screen">
