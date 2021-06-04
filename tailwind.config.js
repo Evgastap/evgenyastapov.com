@@ -10,14 +10,14 @@ module.exports = {
       'lilita': ['Lilita One'],
       'righteous': ['Righteous']
     },
-    height: {
-      '25vh': '25vh',
-      '50vh': '50vh',
-      '75vh': '75vh',
-    },
     extend: {
       zIndex: {
         '-10': '-10',
+      },
+      height: {
+        'quarter': '25vh',
+        'half': '50vh',
+        'threequarters': '75vh',
       },
     },
   },
