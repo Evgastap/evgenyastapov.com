@@ -15,7 +15,11 @@ module.exports = {
       '50vh': '50vh',
       '75vh': '75vh',
     },
-    extend: {},
+    extend: {
+      zIndex: {
+        '-10': '-10',
+      },
+    },
   },
   variants: {},
   plugins: [],
