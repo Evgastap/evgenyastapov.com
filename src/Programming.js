@@ -26,10 +26,12 @@ export default function Programming() {
                         "I sometimes write code.", 1500,
                         "I can code in Java", 1500,
                         "I can code in spaghetti 🍝", 500,
-                        "I can code in R", 1500,
+                        "I can code in R", 2000,
+                        "I can visualize hell using JS", 2000,
                         "I coded this site in React + Tailwind", 1500,
                         "I have impostor syndrome?", 1500, 
-                        "I can `git push --force`", 1500
+                        "I can `git push --force`", 1500,
+                        "I parse HTML using regex", 1500
                     ]
                 }
                 loop={Infinity}
