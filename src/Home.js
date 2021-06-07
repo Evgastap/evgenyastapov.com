@@ -16,7 +16,7 @@ export default function Home() {
                 <Link to="/programming">
                     <motion.div className="w-full h-full flex justify-center items-center overflow-hidden">
                         <ProgressiveImage src="/programming.jpg" delay={3000} placeholder="/programming_mini.jpg">{src => <motion.img layoutId="programmingHero" src={src} className="object-cover min-h-full" alt="Programming Evgeny" />}</ProgressiveImage>
-                        <motion.h1 className="absolute text-white text-3xl md:text-6xl font-thin font-roboto">Programming_Evg</motion.h1>
+                        <motion.h1 className="absolute text-white text-3xl md:text-4xl font-thin font-roboto">Programming_Evg</motion.h1>
                     </motion.div>
                 </Link>
                 <Link to="/work">
