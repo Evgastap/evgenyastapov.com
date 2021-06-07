@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion'
 import React from 'react'
-import ProgressiveImage from 'react-progressive-image'
 import Typical from 'react-typical';
 import CardWithText from './elements/CardWithText'
 
@@ -21,9 +20,6 @@ export default function Programming() {
                             overflow-hidden 
                             bg-gradient-to-bl from-green-500">
                 <motion.div layoutId="programmingHero" alt="Programming Evgeny" className="object-cover min-h-full w-full -z-10" style={progImgStyle} />
-                {/* <ProgressiveImage src="/programming.jpg" delay={1500} placeholder="/programming_mini.jpg">
-                    {src => <motion.img layoutId="programmingHero" src={src} className="object-cover min-h-full -z-10" alt="Programming Evgeny" />}
-                </ProgressiveImage> */}
                 <div className="absolute">
                     <Typical
                         steps={

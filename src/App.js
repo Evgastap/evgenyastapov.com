@@ -5,7 +5,7 @@ import Photography from './Photography';
 import Programming from './Programming';
 import Work from './Work';
 import Other from './Other';
-import { AnimateSharedLayout, AnimatePresence } from 'framer-motion';
+import { AnimateSharedLayout } from 'framer-motion';
 
 function App() {
   return (
