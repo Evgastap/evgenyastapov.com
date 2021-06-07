@@ -20,6 +20,11 @@ module.exports = {
         'half': '50vh',
         'threequarters': '75vh',
       },
+      maxHeight: {
+        '1/4': '25vh',
+        '1/3': '33vh',
+        '1/2': '50vh'
+      }
     },
   },
   variants: {},
