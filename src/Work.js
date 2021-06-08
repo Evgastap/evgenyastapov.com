@@ -12,8 +12,13 @@ const workImgStyle = {
 
 export default function Work() {
     return (
-        <div className="h-screen">
-            <ProgressiveImage src="/work.jpg" delay={1500} placeholder="/work_mini.jpg">{src => <motion.img layoutId="workHero" src={src} className="max-w-full" alt="Work Evgeny" />}</ProgressiveImage>
+        <div className="w-full h-screen
+                            flex justify-center items-center text-center 
+                            font-extralight text-2xl sm:text-4xl text-white font-roboto
+                            overflow-hidden 
+                            bg-gradient-to-bl from-pink-500">
+            <motion.div layoutId="workHero" alt="Work Evgeny" className="object-cover min-h-full w-full -z-10" style={workImgStyle} />
+            <p className="absolute text-white">Page under construction 👀</p>
         </div>
     )
 }

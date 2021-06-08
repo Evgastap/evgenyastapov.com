@@ -12,8 +12,13 @@ const otherImgStyle = {
 
 export default function Other() {
     return (
-        <div className="h-screen">
-            <ProgressiveImage src="/other.jpg" delay={1500} placeholder="/other_mini.jpg">{src => <motion.img layoutId="otherHero" src={src} className="h-full w-full" alt="Other Evgeny" />}</ProgressiveImage>
+        <div className="w-full h-screen
+                            flex justify-center items-center text-center 
+                            font-extralight text-2xl sm:text-4xl text-white font-roboto
+                            overflow-hidden 
+                            bg-gradient-to-bl from-yellow-500">
+            <motion.div layoutId="otherHero" alt="Other Evgeny" className="object-cover min-h-full w-full -z-10" style={otherImgStyle} />
+            <p className="absolute text-white">Page under construction 👀</p>
         </div>
     )
 }
