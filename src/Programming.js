@@ -35,7 +35,7 @@ export default function Programming() {
                                 "I can visualize hell using JS", 2000,
                                 "I coded this site in React + Tailwind", 1500,
                                 "I have impostor syndrome?", 1500,
-                                "I can `git push --force`", 1500,
+                                "I have 3 followers on github", 1500,
                                 "I parse HTML using regex", 1500
                             ]
                         }
