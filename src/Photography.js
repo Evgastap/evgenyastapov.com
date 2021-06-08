@@ -14,10 +14,11 @@ function importAll(r) {
 }
 export default function Photography() {
     const [images, setImages] = useState([])
+
     useEffect(() => {
         const listOfImages = importAll(require.context('./portfolio/', false, /\.(png|jpe?g|svg)$/));
         setImages(listOfImages)
-    })
+    }, [])
         return (
            <div>
                <div className="w-full h-threequarters sm:h-threequarters 
@@ -37,6 +38,7 @@ export default function Photography() {
                             (image, index) => <div key={index} className={`w-full h-full my-2 sm:my-0 ${image.default.includes('col-span-2') && "sm:col-span-2" || image.default.includes('col-span-3') && "sm:col-span-3"}`}>
                                 <img key={index} src={image.default} alt={`Evgeny Astapov Photo Portfolio ${index + 1}`} className="object-cover min-h-full" loading="lazy"></img>
                             </div>
+                            // I really don't understand how a brain so large fits into my skull sometimes
                         )
                     }
                 </div>
