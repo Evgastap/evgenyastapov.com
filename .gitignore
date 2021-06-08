@@ -6,3 +6,4 @@ src/index.css
 
 # Local Netlify folder
 .netlify
+src/index.css
