@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion'
 import React from 'react'
-import ProgressiveImage from 'react-progressive-image';
 import * as constants from './constants'
 
 // styles for the work image

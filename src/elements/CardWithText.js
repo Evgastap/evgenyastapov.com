@@ -1,5 +1,5 @@
 import React from 'react'
-import { motion, Color } from 'framer-motion'
+import { motion } from 'framer-motion'
 
 const imageVariants = {
     hover: {
@@ -31,7 +31,7 @@ function CardWithText(props) {
     return (
         <div class="mt-10 mx-5">
             <motion.div variants={cardVariants} whileHover="hover" whileTap="tap" class="max-w-2xl mx-auto overflow-hidden bg-white rounded-lg shadow-md dark:bg-gray-800">
-                <a href={props.url} target="_blank">
+                <a href={props.url} target="_blank" rel="noreferrer">
                     <div className="w-full h-64 overflow-hidden">
                             <motion.img class="object-cover w-full max-h-full h-64" src={props.image} alt={props.title} variants = {imageVariants} inherit="True" transition={transitionSettings} />
                     </div>
