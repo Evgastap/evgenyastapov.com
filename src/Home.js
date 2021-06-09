@@ -16,34 +16,59 @@ const textHover = {
     }
 }
 
+const homeCards = [
+    {
+        link: "photography",
+        caption: "Photography Evg",
+        img: "/photography.jpg",
+        placeholder: "/photography_mini.jpg",
+        layoutId: "photographyHero",
+        alt: "Photography Evgeny Astapov",
+        font: "font-handwriting"
+    },
+    {
+        link: "programming",
+        caption: "Programming_Evg",
+        img: "/programming.jpg",
+        placeholder: "/programming_mini.jpg",
+        layoutId: "programmingHero",
+        alt: "Programming Evgeny Astapov",
+        font: "font-roboto"
+    },
+    {
+        link: "work",
+        caption: "Work Evg",
+        img: "/work.jpg",
+        placeholder: "/work_mini.jpg",
+        layoutId: "workHero",
+        alt: "Work Evgeny Astapov",
+        font: "font-lilita"
+    },
+    {
+        link: "other",
+        caption: "Other Evg",
+        img: "/other.jpg",
+        placeholder: "/other_mini.jpg",
+        layoutId: "otherHero",
+        alt: "Other Evgeny Astapov",
+        font: "font-righteous"
+    },
+]
+
+console.log(homeCards)
+
 export default function Home() {
     return (
         <div className="grid grid-rows-4 md:grid-cols-2 md:grid-rows-2 h-screen">
             <AnimatePresence exitBeforeEnter>
-                <Link to="/photography">
+                {homeCards.map((card) => 
+                    <Link to={card.link}>
                     <motion.div className="w-full h-full flex justify-center items-center overflow-hidden" whileHover="hover">
-                        <ProgressiveImage src="/photography.jpg" delay={3000} placeholder="/photography_mini.jpg">{src => <motion.img layoutId="photographyHero" variants={imageHover} inherit="True" transition={constants.TRANSITION_SETTINGS} src={src} className="object-cover min-h-full" alt="Photography Evgeny" />}</ProgressiveImage>
-                        <motion.h1 className="absolute text-white text-3xl md:text-6xl font-thin font-handwriting" variants={textHover} inherit="True" transition={constants.TRANSITION_SETTINGS}>Photography Evg</motion.h1>
+                        <ProgressiveImage src={card.img} delay={3000} placeholder={card.placeholder}>{src => <motion.img layoutId={card.layoutId} variants={imageHover} inherit="True" transition={constants.TRANSITION_SETTINGS} src={src} className="object-cover min-h-full" alt={card.alt} />}</ProgressiveImage>
+                        <motion.h1 className={`absolute text-white text-4xl md:text-5xl font-thin ${card.font}`} variants={textHover} inherit="True" transition={constants.TRANSITION_SETTINGS}>{card.caption}</motion.h1>
                     </motion.div>
-                </Link>
-                <Link to="/programming">
-                    <motion.div className="w-full h-full flex justify-center items-center overflow-hidden" whileHover="hover">
-                        <ProgressiveImage src="/programming.jpg" delay={3000} placeholder="/programming_mini.jpg">{src => <motion.img layoutId="programmingHero" variants={imageHover} inherit="True" transition={constants.TRANSITION_SETTINGS} src={src} className="object-cover min-h-full" alt="Programming Evgeny" />}</ProgressiveImage>
-                        <motion.h1 className="absolute text-white text-3xl md:text-4xl font-thin font-roboto" variants={textHover} inherit="True" transition={constants.TRANSITION_SETTINGS}>Programming_Evg</motion.h1>
-                    </motion.div>
-                </Link>
-                <Link to="/work">
-                    <motion.div className="w-full h-full flex justify-center items-center overflow-hidden" whileHover="hover">
-                        <ProgressiveImage src="/work.jpg" delay={3000} placeholder="work_mini.jpg">{src => <motion.img layoutId="workHero" variants={imageHover} inherit="True" transition={constants.TRANSITION_SETTINGS} src={src} className="object-cover min-h-full" alt="Work Evgeny" />}</ProgressiveImage>
-                        <motion.h1 className="absolute text-white text-3xl md:text-6xl font-thin font-lilita" variants={textHover} inherit="True" transition={constants.TRANSITION_SETTINGS}>Work Evg</motion.h1>
-                    </motion.div>
-                </Link>
-                <Link to="/other">
-                    <motion.div className="w-full h-full flex justify-center items-center overflow-hidden" whileHover="hover">
-                        <ProgressiveImage src="/other.jpg" delay={3000} placeholder="other_mini.jpg">{src => <motion.img layoutId="otherHero" variants={imageHover} inherit="True" transition={constants.TRANSITION_SETTINGS} src={src} className="object-cover min-h-full" alt="Other Evgeny" />}</ProgressiveImage>
-                        <motion.h1 className="absolute text-white text-3xl md:text-6xl font-thin font-righteous" variants={textHover} inherit="True" transition={constants.TRANSITION_SETTINGS}>Other Evg</motion.h1>
-                    </motion.div>
-                </Link>
+                    </Link> 
+                )}
             </AnimatePresence>
         </div>
     )
