@@ -55,11 +55,16 @@ const homeCards = [
     },
 ]
 
-console.log(homeCards)
+// to size the home element to the true size of a mobile screen
+const fullScreen = {
+    height: "calc(var(--vh, 1vh) * 100)"
+}
+let vh = window.innerHeight * 0.01;
+document.documentElement.style.setProperty('--vh', `${vh}px`);
 
 export default function Home() {
     return (
-        <div className="grid grid-rows-4 md:grid-cols-2 md:grid-rows-2 h-screen">
+        <div className="grid grid-rows-4 md:grid-cols-2 md:grid-rows-2" style={fullScreen}>
             <AnimatePresence exitBeforeEnter>
                 {homeCards.map((card) => 
                     <Link to={card.link}>
