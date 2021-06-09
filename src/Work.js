@@ -18,7 +18,7 @@ export default function Work() {
                             overflow-hidden 
                             bg-gradient-to-bl from-pink-500">
             <motion.div layoutId="workHero" alt="Work Evgeny" className="object-cover min-h-full w-full -z-10" style={workImgStyle} />
-            <p className="absolute text-white">Page under construction 👀</p>
+            <p className="absolute text-white mx-2">Page under construction 👀</p>
         </div>
     )
 }

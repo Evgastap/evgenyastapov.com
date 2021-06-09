@@ -20,7 +20,7 @@ export default function Programming() {
                             overflow-hidden 
                             bg-gradient-to-bl from-green-500">
                 <motion.div layoutId="programmingHero" alt="Programming Evgeny" className="object-cover min-h-full w-full -z-10" style={progImgStyle} />
-                <div className="absolute">
+                <div className="absolute mx-2">
                     <Typical
                         steps={
                             [
