@@ -10,6 +10,8 @@ const photoImgStyle = {
     backgroundPositionY: "60%",
 }
 
+// TODO: add some shots from the old webiste
+
 function importAll(r) {
     return r.keys().map(r);
 }
@@ -24,11 +26,19 @@ export default function Photography() {
            <div>
                <div className="w-full h-threequarters sm:h-threequarters 
                                 flex justify-center items-center text-center 
-                                font-extralight text-2xl sm:text-6xl text-white font-handwriting
+                                text-white
                                 overflow-hidden 
-                                bg-gradient-to-bl from-indigo-500">
+                                bg-gradient-to-bl from-indigo-800">
+                    <div className="absolute">
+                        <h1 className="font-handwriting text-4xl sm:text-6xl">I ❤ taking pictures.</h1>
+                        <h2 className="pt-5 max-w-3xl sm:text-xl font-extralight mx-8">
+                            I love shooting pics and making vids. 
+                            Professionally, I enjoy shooting events, but in my free time 
+                            I've done everything from nature to product photography.
+                            Check out some of my event shots below ;)
+                        </h2>
+                    </div>
                     <motion.div layoutId="photographyHero" transition={constants.TRANSITION_SETTINGS} alt="Photography Evgeny" className="object-cover min-h-full w-full -z-10" style={photoImgStyle} />
-                    <h1 className="absolute">I ❤ taking pictures.</h1>
                 </div>
 
                 <div className="sm:grid sm:grid-cols-4 gap-4 m-2 sm:m-5">
