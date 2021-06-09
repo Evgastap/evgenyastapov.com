@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import React, { useEffect, useState } from 'react';
+import * as constants from './constants'
 
 // styles for the photography image
 const photoImgStyle = {
@@ -26,7 +27,7 @@ export default function Photography() {
                                 font-extralight text-2xl sm:text-6xl text-white font-handwriting
                                 overflow-hidden 
                                 bg-gradient-to-bl from-indigo-500">
-                    <motion.div layoutId="photographyHero" alt="Photography Evgeny" className="object-cover min-h-full w-full -z-10" style={photoImgStyle} />
+                    <motion.div layoutId="photographyHero" transition={constants.TRANSITION_SETTINGS} alt="Photography Evgeny" className="object-cover min-h-full w-full -z-10" style={photoImgStyle} />
                     <h1 className="absolute">I ❤ taking pictures.</h1>
                 </div>
 

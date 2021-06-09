@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import React from 'react'
 import ProgressiveImage from 'react-progressive-image';
+import * as constants from './constants'
 
 // styles for the work image
 const otherImgStyle = {
@@ -17,7 +18,7 @@ export default function Other() {
                             font-extralight text-2xl sm:text-4xl text-white font-roboto
                             overflow-hidden 
                             bg-gradient-to-bl from-yellow-500">
-            <motion.div layoutId="otherHero" alt="Other Evgeny" className="object-cover min-h-full w-full -z-10" style={otherImgStyle} />
+            <motion.div layoutId="otherHero" transition={constants.TRANSITION_SETTINGS} alt="Other Evgeny" className="object-cover min-h-full w-full -z-10" style={otherImgStyle} />
             <p className="absolute text-white mx-2">Page under construction 👀</p>
         </div>
     )

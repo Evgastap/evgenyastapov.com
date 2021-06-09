@@ -2,6 +2,7 @@ import { motion } from 'framer-motion'
 import React from 'react'
 import Typical from 'react-typical';
 import CardWithText from './elements/CardWithText'
+import * as constants from './constants'
 
 // styles for the programming image
 const progImgStyle = {
@@ -19,7 +20,7 @@ export default function Programming() {
                             font-extralight text-2xl sm:text-4xl text-white font-roboto
                             overflow-hidden 
                             bg-gradient-to-bl from-green-500">
-                <motion.div layoutId="programmingHero" alt="Programming Evgeny" className="object-cover min-h-full w-full -z-10" style={progImgStyle} />
+                <motion.div layoutId="programmingHero" transition={constants.TRANSITION_SETTINGS} alt="Programming Evgeny" className="object-cover min-h-full w-full -z-10" style={progImgStyle} />
                 <div className="absolute mx-2">
                     <Typical
                         steps={
