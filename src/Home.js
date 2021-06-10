@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import ProgressiveImage from 'react-progressive-image'
 import * as constants from './constants'
+import MetaTags from 'react-meta-tags'
 
 const imageHover = {
     hover: {
@@ -65,6 +66,17 @@ document.documentElement.style.setProperty('--vh', `${vh}px`);
 export default function Home() {
     return (
         <div className="grid grid-rows-4 md:grid-cols-2 md:grid-rows-2" style={fullScreen}>
+            <MetaTags>
+                <meta prefix="og: http://evgenyastapov.com" property="og:type" content="website" />
+                <meta prefix="og: http://evgenyastapov.com" property="og:url" content="http://evgenyastapov.com/" />
+                <meta prefix="og: http://evgenyastapov.com" property="og:title" content="Evgeny Astapov | Photographer, tech guy & all-around creative" />
+                <meta prefix="og: http://evgenyastapov.com" property="og:description" content="Hi! I'm Evgeny, a photographer, tech guy and all-around creative. Everything from web design, to coding, to growth marketing and photography - I've done it all." />
+                <meta name="image" prefix="og: http://evgenyastapov.com" property="og:image" content="%PUBLIC_URL%/meta.jpg" />
+                <meta prefix="og: http://evgenyastapov.com" property="og:image:url" content="${require(`%PUBLIC_URL%/meta.jpg`)}" />
+                <meta prefix="og: http://evgenyastapov.com" property="og:image:type" content="image/jpeg" />
+                <meta prefix="og: http://evgenyastapov.com" property="og:image:width" content="1200" />
+                <meta prefix="og: http://evgenyastapov.com" property="og:image:height" content="629" />
+            </MetaTags>
             <AnimatePresence exitBeforeEnter>
                 {homeCards.map((card) => 
                     <Link key={card.link} to={card.link}>
