@@ -159,7 +159,8 @@ export default function Programming() {
             ]}
             loop={Infinity}
             wrapper="p"
-          />
+            key={`${username} ${currentRoastIndex}`} // because this library is 2 years old and breaks on state changes...
+          /> 
         </div>
       </div>
 
