@@ -1,9 +1,9 @@
-import { motion, AnimatePresence } from "framer-motion"
-import React, { useState } from "react"
-import Typical from "react-typical"
-import CardWithText from "./elements/CardWithText"
-import * as constants from "./constants"
-import axios from "axios"
+import { motion, AnimatePresence } from "framer-motion";
+import React, { useState } from "react";
+import Typical from "react-typical";
+import CardWithText from "./elements/CardWithText";
+import * as constants from "./constants";
+import axios from "axios";
 
 // styles for the programming image
 const progImgStyle = {
@@ -11,87 +11,105 @@ const progImgStyle = {
   backgroundSize: "cover",
   backgroundPositionX: "45%",
   backgroundPositionY: "45%",
-}
+};
 
 export default function Programming() {
-  const [username, setUsername] = useState("")
+  const [username, setUsername] = useState("");
   const [gitPictureUrl, setGitPictureUrl] = useState("");
-  const [roasts, setRoasts] = useState([])
-  const [currentRoastIndex, setCurrentRoastIndex] = useState(0)
+  const [roasts, setRoasts] = useState([]);
+  const [currentRoastIndex, setCurrentRoastIndex] = useState(0);
 
   const handleChange = (event) => {
-    setUsername(event.target.value)
-  }
+    setUsername(event.target.value);
+  };
 
   const handleSubmit = (event) => {
-    event.preventDefault()
+    event.preventDefault();
 
     if (roasts.length === 0) {
       axios
         .get(`https://api.github.com/users/${username}`)
         .then((res) => {
-          roastGit(res.data)
-          setGitPictureUrl(res.data.avatar_url)
+          roastGit(res.data);
+          setGitPictureUrl(res.data.avatar_url);
         })
-        .catch((err) => console.log(err))
+        .catch((err) => console.log(err));
 
       axios
         .get(`https://api.github.com/users/${username}/repos`)
         .then((res) => {
-          roastRepos(res.data)
+          roastRepos(res.data);
         })
-        .catch((err) => console.log(err))
+        .catch((err) => console.log(err));
     } else {
-      console.log(roasts)
-      setCurrentRoastIndex((currentRoastIndex + 1) % roasts.length)
+      console.log(roasts);
+      setCurrentRoastIndex((currentRoastIndex + 1) % roasts.length);
     }
-  }
+  };
 
   const roastGit = (data) => {
-    const addedRoasts = []
+    const addedRoasts = [];
 
-    addedRoasts.push(`${data.public_repos} public repos? So much for collaborating on code huh`)
-    addedRoasts.push(`${data.followers} followers? My grandma has more followers on ig`)
+    addedRoasts.push(
+      `${data.public_repos} public repos? So much for collaborating on code huh`
+    );
+    addedRoasts.push(
+      `${data.followers} followers? My grandma has more followers on ig`
+    );
 
     if (data.public_gists === 0) {
-      addedRoasts.push("0 public gists? Do you even know what that is?")
+      addedRoasts.push("0 public gists? Do you even know what that is?");
     } else {
-      addedRoasts.push(`Damn, you have ${data.public_gists} gists? Who even uses gists`)
+      addedRoasts.push(
+        `Damn, you have ${data.public_gists} gists? Who even uses gists`
+      );
     }
 
     if (data.bio === null) {
-      addedRoasts.push("Programming so much that you don't even have a git bio?")
+      addedRoasts.push(
+        "Programming so much that you don't even have a git bio?"
+      );
     }
     if (data.company === null) {
-      addedRoasts.push("Unemployed or so lazy that you don't even put your company on your git profile?")
+      addedRoasts.push(
+        "Unemployed or so lazy that you don't even put your company on your git profile?"
+      );
     }
     if (data.blog === null) {
-      addedRoasts.push("TFW you don't even have a website in your bio")
+      addedRoasts.push("TFW you don't even have a website in your bio");
     }
     if (data.location === null) {
-      addedRoasts.push("Too insecure to put your location on your profile?")
+      addedRoasts.push("Too insecure to put your location on your profile?");
     }
     if (data.email === null) {
-      addedRoasts.push("Maybe putting your email on your git profile will get you more freelance clients... lol jk")
+      addedRoasts.push(
+        "Maybe putting your email on your git profile will get you more freelance clients... lol jk"
+      );
     }
     if (data.hireable !== null) {
-      addedRoasts.push("Unemployed? Yeah, I can tell.")
+      addedRoasts.push("Unemployed? Yeah, I can tell.");
     }
     if (data.bio === null) {
-      addedRoasts.push("Too lazy to update your bio or do you just have nothing to say?")
+      addedRoasts.push(
+        "Too lazy to update your bio or do you just have nothing to say?"
+      );
     }
     if (data.twitter_username === null) {
-      addedRoasts.push("Doesn't every dev flex their twitter in their github bio?")
+      addedRoasts.push(
+        "Doesn't every dev flex their twitter in their github bio?"
+      );
     }
 
-    addedRoasts.sort(() => Math.random() - 0.5)
-    addedRoasts.push("Ok I've ran out of roasts... Maybe go to my git repo and add some more? ;)")
-    setRoasts(addedRoasts)
-  }
+    addedRoasts.sort(() => Math.random() - 0.5);
+    addedRoasts.push(
+      "Ok I've ran out of roasts... Maybe go to my git repo and add some more? ;)"
+    );
+    setRoasts(addedRoasts);
+  };
 
   const roastRepos = (data) => {
-    console.log(data)
-  }
+    console.log(data);
+  };
 
   return (
     <div>
@@ -167,7 +185,9 @@ export default function Programming() {
         />
       </div>
 
-      <h2 className="text-2xl sm:text-4xl w-full text-center mt-5 sm:my-10">But... Can Evg backend?</h2>
+      <h2 className="text-2xl sm:text-4xl w-full text-center mt-5 sm:my-10">
+        But... Can Evg backend?
+      </h2>
 
       <section className="flex flex-col max-w-4xl mx-auto sm:my-5 mb-5 overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800 md:flex-row md:h-48">
         <div className="md:flex md:items-center md:justify-center md:w-1/2 md:bg-gray-700 md:dark:bg-gray-800">
@@ -184,16 +204,29 @@ export default function Programming() {
             )}
 
             <p className="mt-2 text-sm text-gray-600 dark:text-gray-400 md:text-gray-200 text-justify">
-              {roasts.length === 0
-                ? <span>How <b>dare</b> you assume that I can't backend? I mean, I'm not amazing at web-related backend, but I'm still trying to imporve. This is why I introduce to you... Roast my git!</span>
-                : roasts[currentRoastIndex]}
+              {roasts.length === 0 ? (
+                <span>
+                  How <b>dare</b> you assume that I can't backend? I mean, I'm
+                  not amazing at web-related backend, but I'm still trying to
+                  imporve. This is why I introduce to you... Roast my git!
+                </span>
+              ) : (
+                roasts[currentRoastIndex]
+              )}
             </p>
           </div>
         </div>
 
         <div className="m-auto align-middle">
           <div className="w-full flex items-center justify-center mb-5">
-              {roasts.length === 0 ? <svg width="64" height="64" viewBox="0 0 1024 1024" fill="none" xmlns="http://www.w3.org/2000/svg">
+            {roasts.length === 0 ? (
+              <svg
+                width="64"
+                height="64"
+                viewBox="0 0 1024 1024"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
                 <motion.path
                   fillRule="evenodd"
                   clipRule="evenodd"
@@ -202,8 +235,13 @@ export default function Programming() {
                   fill="#4b5563"
                 />
               </svg>
-              : 
-              <motion.img src={gitPictureUrl} className="rounded-full" style={{width: '64px', height: '64px'}} />}
+            ) : (
+              <motion.img
+                src={gitPictureUrl}
+                className="rounded-full"
+                style={{ width: "64px", height: "64px" }}
+              />
+            )}
           </div>
           <div className="flex items-center justify-center pb-6 md:py-0 w-full sm:mx-5">
             <form onSubmit={handleSubmit}>
@@ -256,5 +294,5 @@ export default function Programming() {
                 </div>
             </div> */}
     </div>
-  )
+  );
 }
