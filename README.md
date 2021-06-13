@@ -7,7 +7,9 @@ If you check my commits, I've messed around with React a fair bit. I feel that I
 Available on [new.evgenyastapov.com](https://new.evgenyastapov.com/)
 
 ## Packages used
+
 - [`tailwind.css`](https://tailwindcss.com/)
 - [`framer-motion`](https://www.framer.com/motion/)
 - [`react-typical`](https://www.npmjs.com/package/react-typical)
 - [`react-progressive-image`](https://www.npmjs.com/package/react-progressive-image)
+- [`prettier`](https://prettier.io/)
