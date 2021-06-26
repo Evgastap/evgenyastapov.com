@@ -52,8 +52,10 @@ export default function Photography() {
           // hey, I'm literally taking images from a directory and applying a class name if they have a 'col-span-x' property in their name.
           // who needs a CMS, right?
           (image, index) => (
-            <div
+            <motion.div
               key={index}
+              initial={{opacity: 0, scale: 0.5}}
+              animate={{opacity: 1, scale: 1}}
               className={`w-full h-full my-2 sm:my-0 ${image.default.includes("col-span-2") && "sm:col-span-2"} ${
                 image.default.includes("col-span-3") && "sm:col-span-3"
               }`}
@@ -65,7 +67,7 @@ export default function Photography() {
                 className="object-cover min-h-full"
                 loading="lazy"
               ></img>
-            </div>
+            </motion.div>
           )
           // I really don't understand how a brain so large fits into my skull sometimes
         )}
