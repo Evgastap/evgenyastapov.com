@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import React, { FormEvent, useState } from "react";
 import { ReactTypical } from "@deadcoder0904/react-typical";
+import '@deadcoder0904/react-typical/dist/styles.min.css'
 import CardWithText from "./elements/CardWithText";
 import * as constants from "./constants";
 import axios from "axios";
