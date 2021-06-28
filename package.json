@@ -23,8 +23,8 @@
     "purge:css": "cross-env NODE_ENV=production postcss src/tailwind.css -o src/index.css",
     "build:css": "postcss src/tailwind.css -o src/index.css",
     "watch:css": "postcss src/tailwind.css -o src/index.css -w",
-    "start": "npm run build:css && react-scripts start",
-    "build": "npm run purge:css && react-scripts build",
+    "start": "npm run build:css && tsc --watch && react-scripts start",
+    "build": "tsc --build tsconfig.json && npm run purge:css && react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
