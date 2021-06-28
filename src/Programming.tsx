@@ -1,6 +1,6 @@
-import { motion, AnimatePresence } from "framer-motion";
-import React, { useState } from "react";
-import Typical from "react-typical";
+import { motion } from "framer-motion";
+import React, { FormEvent, useState } from "react";
+import { ReactTypical } from "@deadcoder0904/react-typical";
 import CardWithText from "./elements/CardWithText";
 import * as constants from "./constants";
 import axios from "axios";
@@ -14,16 +14,16 @@ const progImgStyle = {
 };
 
 export default function Programming() {
-  const [username, setUsername] = useState("");
-  const [gitPictureUrl, setGitPictureUrl] = useState("");
-  const [roasts, setRoasts] = useState([]);
-  const [currentRoastIndex, setCurrentRoastIndex] = useState(0);
+  const [username, setUsername] = useState<string>("");
+  const [gitPictureUrl, setGitPictureUrl] = useState<string>("");
+  const [roasts, setRoasts] = useState<string[]>([]);
+  const [currentRoastIndex, setCurrentRoastIndex] = useState<number>(0);
 
-  const handleChange = (event) => {
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setUsername(event.target.value);
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = (event: FormEvent) => {
     event.preventDefault();
 
     if (roasts.length === 0) {
@@ -47,8 +47,8 @@ export default function Programming() {
     }
   };
 
-  const roastGit = (data) => {
-    const addedRoasts = [];
+  const roastGit = (data: any) => {
+    const addedRoasts: string[] = [];
 
     addedRoasts.push(
       `${data.public_repos} public repos? So much for collaborating on code huh`
@@ -107,7 +107,7 @@ export default function Programming() {
     setRoasts(addedRoasts);
   };
 
-  const roastRepos = (data) => {
+  const roastRepos = (data: any) => {
     console.log(data);
   };
 
@@ -123,12 +123,11 @@ export default function Programming() {
         <motion.div
           layoutId="programmingHero"
           transition={constants.TRANSITION_SETTINGS}
-          alt="Programming Evgeny"
           className="object-cover min-h-full w-full -z-10"
           style={progImgStyle}
         />
         <div className="absolute mx-2">
-          <Typical
+          <ReactTypical
             steps={[
               "",
               1500,

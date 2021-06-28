@@ -16,6 +16,16 @@ const textHover = {
     }
 }
 
+interface Card {
+    link: string,
+    caption: string,
+    img: string,
+    placeholder: string,
+    layoutId: string,
+    alt: string,
+    font: string
+}
+
 const homeCards = [
     {
         link: "photography",
@@ -66,11 +76,11 @@ export default function Home() {
     return (
         <div className="grid grid-rows-4 md:grid-cols-2 md:grid-rows-2" style={fullScreen}>
             <AnimatePresence exitBeforeEnter>
-                {homeCards.map((card) => 
+                {homeCards.map((card: Card) => 
                     <Link key={card.link} to={card.link}>
                     <motion.div className="w-full h-full flex justify-center items-center overflow-hidden" whileHover="hover">
-                        <ProgressiveImage src={card.img} delay={3000} placeholder={card.placeholder}>{src => <motion.img layoutId={card.layoutId} variants={imageHover} inherit="True" transition={constants.TRANSITION_SETTINGS} src={src} className="object-cover min-h-full" alt={card.alt} />}</ProgressiveImage>
-                        <motion.h1 className={`absolute text-white text-4xl md:text-5xl font-thin ${card.font}`} variants={textHover} inherit="True" transition={constants.TRANSITION_SETTINGS}>{card.caption}</motion.h1>
+                        <ProgressiveImage src={card.img} delay={3000} placeholder={card.placeholder}>{(src: string | undefined) => <motion.img layoutId={card.layoutId} variants={imageHover} inherit={true} transition={constants.TRANSITION_SETTINGS} src={src} className="object-cover min-h-full" alt={card.alt} />}</ProgressiveImage>
+                        <motion.h1 className={`absolute text-white text-4xl md:text-5xl font-thin ${card.font}`} variants={textHover} inherit={true} transition={constants.TRANSITION_SETTINGS}>{card.caption}</motion.h1>
                     </motion.div>
                     </Link> 
                 )}

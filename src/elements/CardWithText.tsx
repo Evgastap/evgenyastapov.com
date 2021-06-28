@@ -25,7 +25,15 @@ const transitionSettings = {
   ease: [0.6, 0.01, -0.05, 0.9],
 }
 
-function CardWithText(props) {
+interface Props{
+  tags: string,
+  title: string,
+  url: string,
+  image: string,
+  description: string
+}
+
+function CardWithText(props: Props) {
   return (
     <div className="mt-10 mx-5">
       <motion.div
@@ -41,7 +49,7 @@ function CardWithText(props) {
               src={props.image}
               alt={props.title}
               variants={imageVariants}
-              inherit="True"
+              inherit={true}
               transition={transitionSettings}
             />
           </div>
@@ -50,7 +58,7 @@ function CardWithText(props) {
             <div>
               <span className="text-xs font-medium text-green-500 uppercase dark:text-blue-400">{props.tags}</span>
               <motion.span
-                href="#"
+                // href="#"
                 className="block mt-2 text-2xl font-semibold text-gray-800 dark:text-white"
                 variants={textVariants}
               >
