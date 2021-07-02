@@ -13,7 +13,10 @@ Available on [evgenyastapov.com](https://evgenyastapov.com/)
 - [`react-typical`](https://www.npmjs.com/package/react-typical) - for re-usable typing animation
 - [`react-progressive-image`](https://www.npmjs.com/package/react-progressive-image) - for loading the front page image as fast as possible, and swapping when full-res get loaded
 - [`prettier`](https://prettier.io/) - because pretty code
+- `axios` - who doesn't like a giant library just to fetch some API data?
+- `typescript` - because starting without typescript and converting the entire project to TS half-way though is the best kind of fun
 
 ## TODOs:
 - Home animation: when card is clicked, first fade all the other cards away before zooming in on the new page
-- 
+- Subset fonts to only used characters
+- Lazy load & animate image cards on `/photography`
