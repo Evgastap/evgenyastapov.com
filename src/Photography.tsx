@@ -12,11 +12,11 @@ const photoImgStyle = {
 
 // TODO: add some shots from the old webiste
 
-function importAll(r) {
+function importAll(r: any) {
   return r.keys().map(r)
 }
 export default function Photography() {
-  const [images, setImages] = useState([])
+  const [images, setImages] = useState<any[]>([])
 
   useEffect(() => {
     const listOfImages = importAll(require.context("./portfolio/", false, /\.(png|jpe?g|svg)$/))
@@ -41,7 +41,6 @@ export default function Photography() {
         <motion.div
           layoutId="photographyHero"
           transition={constants.TRANSITION_SETTINGS}
-          alt="Photography Evgeny"
           className="object-cover min-h-full w-full -z-10"
           style={photoImgStyle}
         />

@@ -17,7 +17,7 @@ export default function Work() {
                             font-extralight text-2xl sm:text-4xl text-white font-roboto
                             overflow-hidden 
                             bg-gradient-to-bl from-pink-500">
-            <motion.div layoutId="workHero" transition={constants.TRANSITION_SETTINGS} alt="Work Evgeny" className="object-cover min-h-full w-full -z-10" style={workImgStyle} />
+            <motion.div layoutId="workHero" transition={constants.TRANSITION_SETTINGS} className="object-cover min-h-full w-full -z-10" style={workImgStyle} />
             <p className="absolute text-white mx-2">Page under construction 👀</p>
         </div>
     )
