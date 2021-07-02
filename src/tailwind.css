@@ -1,6 +1,7 @@
+/* purgecss start ignore */
 @tailwind base;
-
 @tailwind components;
+/* purgecss end ignore */
 
 @import url('https://fonts.googleapis.com/css2?family=Lilita+One&family=Righteous&family=Satisfy&family=Roboto+Mono&display=swap');
 
