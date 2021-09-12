@@ -1,5 +1,6 @@
 module.exports = {
   important: true,
+  mode: "jit",
   //Purging for Production is configured in PostCSS Config
   purge:{    
     content: ["./src/**/*.html", "./src/**/*.jsx", "./src/**/*.js", "./src/**/*.tsx", "./src/**/*.ts",],
