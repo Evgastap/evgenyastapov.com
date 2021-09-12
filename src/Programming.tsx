@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import React, { FormEvent, useState } from "react";
 import { ReactTypical } from "@deadcoder0904/react-typical";
-import '@deadcoder0904/react-typical/dist/styles.min.css'
+import "@deadcoder0904/react-typical/dist/styles.min.css";
 import CardWithText from "./elements/CardWithText";
 import * as constants from "./constants";
 import axios from "axios";
@@ -160,7 +160,7 @@ export default function Programming() {
             loop={Infinity}
             wrapper="p"
             key={`${username} ${currentRoastIndex}`} // because this library is 2 years old and breaks on state changes...
-          /> 
+          />
         </div>
       </div>
 
@@ -183,6 +183,14 @@ export default function Programming() {
           url="https://www.erasmustech.io/"
           description="I used to organize cool tech events at Erasmus University, and I built and designed our site from the ground up.
                                     It does run on WordPress, but it was the first site I ever built. Not bad, if I dare say so myself."
+        />
+        <CardWithText
+          tags="Typesript, React, Game"
+          title="Aesthetic typer"
+          image="aesthetictyper.png"
+          url="https://type.evgenyastapov.com"
+          description="A typing speed test game with a minimal aesthetic interface. I was watching a video and thought this would be an interesting
+                       learning experience to make."
         />
       </div>
 

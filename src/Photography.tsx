@@ -33,10 +33,11 @@ export default function Photography() {
       >
         <div className="absolute">
           <h1 className="font-handwriting text-4xl sm:text-6xl">I ❤ taking pictures.</h1>
-          <h2 className="pt-5 max-w-3xl sm:text-xl font-extralight mx-8">
+          <h2 className="py-5 max-w-3xl sm:text-xl font-extralight mx-8">
             I love shooting pics and making vids. Professionally, I enjoy shooting events, but in my free time I've done
             everything from nature to product photography. Check out some of my event shots below ;)
           </h2>
+          <h3 className="font-light"><a href="mailto:photo@evgenyastapov.com" className="underline">photo@evgenyastapov.com</a> | <a href="https://instagram.com/evgastap" className="underline">@evgastap</a></h3>
         </div>
         <motion.div
           layoutId="photographyHero"
