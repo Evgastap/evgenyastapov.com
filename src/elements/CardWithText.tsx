@@ -1,5 +1,5 @@
-import React from "react"
 import { motion } from "framer-motion"
+import { EASING_SETTINGS } from "../constants"
 
 const imageVariants = {
   hover: {
@@ -19,10 +19,6 @@ const textVariants = {
   hover: {
     color: "rgb(16, 185, 129)",
   },
-}
-
-const transitionSettings = {
-  ease: [0.6, 0.01, -0.05, 0.9],
 }
 
 interface Props{
@@ -50,7 +46,7 @@ function CardWithText(props: Props) {
               alt={props.title}
               variants={imageVariants}
               inherit={true}
-              transition={transitionSettings}
+              transition={EASING_SETTINGS}
             />
           </div>
 

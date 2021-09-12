@@ -1,6 +1,6 @@
-import { motion } from "framer-motion"
-import React, { useEffect, useState } from "react"
-import * as constants from "./constants"
+import { motion } from "framer-motion";
+import React, { useEffect, useState } from "react";
+import * as constants from "./constants";
 
 // styles for the photography image
 const photoImgStyle = {
@@ -8,20 +8,22 @@ const photoImgStyle = {
   backgroundSize: "cover",
   backgroundPositionX: "40%",
   backgroundPositionY: "60%",
-}
+};
 
 // TODO: add some shots from the old webiste
 
 function importAll(r: any) {
-  return r.keys().map(r)
+  return r.keys().map(r);
 }
 export default function Photography() {
-  const [images, setImages] = useState<any[]>([])
+  const [images, setImages] = useState<any[]>([]);
 
   useEffect(() => {
-    const listOfImages = importAll(require.context("./portfolio/", false, /\.(png|jpe?g|svg)$/))
-    setImages(listOfImages)
-  }, [])
+    const listOfImages = importAll(
+      require.context("./portfolio/", false, /\.(png|jpe?g|svg)$/)
+    );
+    setImages(listOfImages);
+  }, []);
   return (
     <div>
       <div
@@ -32,12 +34,24 @@ export default function Photography() {
                                 bg-gradient-to-bl from-indigo-800"
       >
         <div className="absolute">
-          <h1 className="font-handwriting text-4xl sm:text-6xl">I ❤ taking pictures.</h1>
+          <h1 className="font-handwriting text-4xl sm:text-6xl">
+            I ❤ taking pictures.
+          </h1>
           <h2 className="py-5 max-w-3xl sm:text-xl font-extralight mx-8">
-            I love shooting pics and making vids. Professionally, I enjoy shooting events, but in my free time I've done
-            everything from nature to product photography. Check out some of my event shots below ;)
+            I love shooting pics and making vids. Professionally, I enjoy
+            shooting events, but in my free time I've done everything from
+            nature to product photography. Check out some of my event shots
+            below ;)
           </h2>
-          <h3 className="font-light"><a href="mailto:photo@evgenyastapov.com" className="underline">photo@evgenyastapov.com</a> | <a href="https://instagram.com/evgastap" className="underline">@evgastap</a></h3>
+          <h3 className="font-light">
+            <a href="mailto:photo@evgenyastapov.com" className="underline">
+              photo@evgenyastapov.com
+            </a>{" "}
+            |{" "}
+            <a href="https://instagram.com/evgastap" className="underline">
+              @evgastap
+            </a>
+          </h3>
         </div>
         <motion.div
           layoutId="photographyHero"
@@ -54,11 +68,11 @@ export default function Photography() {
           (image, index) => (
             <motion.div
               key={index}
-              initial={{opacity: 0, scale: 0.5}}
-              animate={{opacity: 1, scale: 1}}
-              className={`w-full h-full my-2 sm:my-0 ${image.default.includes("col-span-2") && "sm:col-span-2"} ${
-                image.default.includes("col-span-3") && "sm:col-span-3"
-              }`}
+              initial={{ opacity: 0, scale: 0.5 }}
+              animate={{ opacity: 1, scale: 1 }}
+              className={`w-full h-full my-2 sm:my-0 ${
+                image.default.includes("col-span-2") && "sm:col-span-2"
+              } ${image.default.includes("col-span-3") && "sm:col-span-3"}`}
             >
               <img
                 key={index}
@@ -76,5 +90,5 @@ export default function Photography() {
                     <img src={listOfImages[1].default} className="absolute z-10 w-full max-h-1/2" alt="" />
                 </div> */}
     </div>
-  )
+  );
 }

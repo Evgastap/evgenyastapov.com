@@ -1,18 +1,41 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, AnimateSharedLayout } from "framer-motion";
 import ProgressiveImage from "react-progressive-image";
 import * as constants from "./constants";
 
+const parentDivVariants = {
+  initial: {
+  },
+  animate: {
+    transition: {
+      staggerChildren: 0.1,
+    }
+  },
+  hover: {}
+};
+
+const cardVariants = {
+  initial: {
+    scale: 0.9,
+    opacity: 0
+  },
+  animate: {
+    scale: 1,
+    opacity: 1
+  },
+  hover: {}
+};
+
 const imageHover = {
   hover: {
-    scale: 1.1,
+    scale: 1.1
   },
 };
 
 const textHover = {
   hover: {
-    opacity: 0.3,
+    scale: 0.9
   },
 };
 
@@ -74,52 +97,54 @@ document.documentElement.style.setProperty("--vh", `${vh}px`);
 
 export default function Home() {
   return (
-    <motion.div
-      className="grid grid-rows-4 md:grid-cols-2 md:grid-rows-2"
-      style={fullScreen}
-      transition={{ staggerChildren: 3 }}
-    >
-      <AnimatePresence>
+      <motion.div
+        className="grid grid-rows-4 md:grid-cols-2 md:grid-rows-2"
+        style={fullScreen}
+        initial="initial"
+        animate="animate"
+        whileHover="hover"
+        variants={parentDivVariants}
+        // transition={{staggerChildren}}
+        key="parentDiv"
+      >
         {homeCards.map((card: Card) => (
           <motion.div
             whileHover="hover"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
+            variants={cardVariants}
             exit={{ opacity: 0 }}
             key={card.link}
           >
             <Link to={card.link}>
-                <div className="w-full h-full flex justify-center items-center overflow-hidden">
-              <ProgressiveImage
-                src={card.img}
-                delay={3000}
-                placeholder={card.placeholder}
-              >
-                {(src: string | undefined) => (
-                  <motion.img
-                    layoutId={card.layoutId}
-                    variants={imageHover}
-                    inherit={true}
-                    transition={constants.TRANSITION_SETTINGS}
-                    src={src}
-                    className="object-cover min-h-full"
-                    alt={card.alt}
-                  />
-                )}
-              </ProgressiveImage>
-              <motion.h1
-                className={`absolute text-white text-4xl md:text-5xl font-thin ${card.font}`}
-                variants={textHover}
-                inherit={true}
-                transition={constants.TRANSITION_SETTINGS}
-              >
-                {card.caption}
-              </motion.h1>
+              <div className="w-full h-full flex justify-center items-center overflow-hidden">
+                <ProgressiveImage
+                  src={card.img}
+                  delay={3000}
+                  placeholder={card.placeholder}
+                >
+                  {(src: string | undefined) => (
+                    <motion.img
+                      layoutId={card.layoutId}
+                      variants={imageHover}
+                      inherit={true}
+                      transition={[constants.TRANSITION_SETTINGS, constants.EASING_SETTINGS]}
+                      src={src}
+                      className="object-cover min-h-full"
+                      alt={card.alt}
+                    />
+                  )}
+                </ProgressiveImage>
+                <motion.h1
+                  className={`absolute text-white text-4xl md:text-5xl font-thin ${card.font}`}
+                  variants={textHover}
+                  inherit={true}
+                  transition={[constants.TRANSITION_SETTINGS, constants.EASING_SETTINGS]}
+                >
+                  {card.caption}
+                </motion.h1>
               </div>
             </Link>
           </motion.div>
         ))}
-      </AnimatePresence>
-    </motion.div>
+      </motion.div>
   );
 }
