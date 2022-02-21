@@ -4,7 +4,6 @@ import { ReactTypical } from "@deadcoder0904/react-typical";
 import "@deadcoder0904/react-typical/dist/styles.min.css";
 import CardWithText from "../../src/elements/CardWithText";
 import * as constants from "../../src/constants";
-import axios from "axios";
 
 // styles for the programming image
 const progImgStyle = {
@@ -28,19 +27,17 @@ export default function Programming() {
     event.preventDefault();
 
     if (roasts.length === 0) {
-      axios
-        .get(`https://api.github.com/users/${username}`)
-        .then((res) => {
-          roastGit(res.data);
-          setGitPictureUrl(res.data.avatar_url);
+      fetch(`https://api.github.com/users/${username}`)
+        .then((res) => res.json())
+        .then((data) => {
+          roastGit(data);
+          setGitPictureUrl(data.avatar_url);
         })
         .catch((err) => console.log(err));
 
-      axios
-        .get(`https://api.github.com/users/${username}/repos`)
-        .then((res) => {
-          roastRepos(res.data);
-        })
+      fetch(`https://api.github.com/users/${username}/repos`)
+        .then((res) => res.json())
+        .then((data) => roastRepos(data))
         .catch((err) => console.log(err));
     } else {
       console.log(roasts);

@@ -90,20 +90,9 @@ const homeCards = [
 // to size the home element to the true size of a mobile screen
 
 export default function Home() {
-  let fullScreen, vh;
-
-  useEffect(() => {
-    fullScreen = {
-      height: "calc(var(--vh, 1vh) * 100)",
-    };
-    vh = window.innerHeight * 0.01;
-    document.documentElement.style.setProperty("--vh", `${vh}px`);
-  }, []);
-
   return (
     <motion.div
-      className="grid grid-rows-4 md:grid-cols-2 md:grid-rows-2"
-      style={fullScreen}
+      className="grid grid-rows-4 md:grid-cols-2 md:grid-rows-2 h-screen"
       initial="initial"
       animate="animate"
       whileHover="hover"
