@@ -2,8 +2,8 @@ import { motion } from "framer-motion";
 import React, { FormEvent, useState } from "react";
 import { ReactTypical } from "@deadcoder0904/react-typical";
 import "@deadcoder0904/react-typical/dist/styles.min.css";
-import CardWithText from "../../src/elements/CardWithText";
-import * as constants from "../../src/constants";
+import CardWithText from "../../components/CardWithText";
+import * as constants from "../../constants";
 
 // styles for the programming image
 const progImgStyle = {
@@ -137,15 +137,15 @@ export default function Programming() {
               500,
               "I sometimes write code.",
               1500,
-              "I can code in Java",
+              "I can code in Typescript",
               1500,
               "I can code in spaghetti 🍝",
               500,
-              "I can code in R",
+              "I can code in Java",
               2000,
               "I can visualize hell using JS",
               2000,
-              "I coded this site in React + Tailwind",
+              "I coded this site in Next.js + Tailwind",
               1500,
               "I have impostor syndrome?",
               1500,
@@ -161,9 +161,9 @@ export default function Programming() {
         </div>
       </div>
 
-      <h2 className="text-4xl w-full text-center mt-10">Sites I've built</h2>
+      <h2 className="text-4xl w-full text-center my-10 text-gray-900 dark:text-white">Sites I've built</h2>
 
-      <div className="w-full grid grid-cols-1 sm:grid-cols-2 px-5 mb-10 ">
+      <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-4 px-5 mb-10 max-w-7xl items-center mx-auto">
         <CardWithText
           tags="WordPress, Design"
           title="Erasmus Centre for Data Analytics"
@@ -191,7 +191,7 @@ export default function Programming() {
         />
       </div>
 
-      <h2 className="text-2xl sm:text-4xl w-full text-center mt-5 sm:my-10">
+      <h2 className="text-2xl sm:text-4xl w-full text-center mt-5 sm:my-10 text-gray-900 dark:text-white">
         But... Can Evg backend?
       </h2>
 
@@ -214,7 +214,7 @@ export default function Programming() {
                 <span>
                   How <b>dare</b> you assume that I can't backend? I mean, I'm
                   not amazing at web-related backend, but I'm still trying to
-                  imporve. This is why I introduce to you... Roast my git!
+                  improve. This is why I introduce to you... Roast my git!
                 </span>
               ) : (
                 roasts[currentRoastIndex]

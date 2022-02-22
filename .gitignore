@@ -11,6 +11,7 @@ src/index.css
 
 # next
 .next
+out
 
 # yarn
 yarn.lock

@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
+import Image from "next/image";
 import React, { useEffect, useState } from "react";
-import * as constants from "../../src/constants";
+import * as constants from "../../constants";
 
 // styles for the photography image
 const photoImgStyle = {
@@ -74,13 +75,15 @@ export default function Photography() {
                 image.default.src.includes("col-span-2") && "sm:col-span-2"
               } ${image.default.src.includes("col-span-3") && "sm:col-span-3"}`}
             >
-              <img
+              <Image
                 key={index}
                 src={image.default.src}
-                alt={`Evgeny Astapov Portfolio ${index + 1}`}
+                width="100px"
+                height="100px"
+                alt={`Evgeny Astapov Photography Portfolio ${index + 1}`}
                 className="object-cover min-h-full"
                 loading="lazy"
-              ></img>
+              ></Image>
             </motion.div>
           )
           // I really don't understand how a brain so large fits into my skull sometimes

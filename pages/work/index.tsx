@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import React from 'react'
-import * as constants from '../../src/constants'
+import * as constants from '../../constants'
 
 // styles for the work image
 const workImgStyle = {
