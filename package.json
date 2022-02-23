@@ -27,7 +27,6 @@
     "watch-ts": "tsc -w",
     "start": "next start",
     "build": "next build",
-    "postbuild": "next-on-netlify",
     "dev": "next dev",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -48,7 +47,6 @@
     ]
   },
   "devDependencies": {
-    "@netlify/plugin-nextjs": "^4.2.7",
     "@types/node": "^17.0.18",
     "@types/react": "^17.0.39",
     "@types/webpack-env": "^1.16.0",
