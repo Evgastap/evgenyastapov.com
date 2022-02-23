@@ -28,17 +28,17 @@ export default function Photography() {
   return (
     <div>
       <div
-        className="w-full h-threequarters sm:h-threequarters 
-                                flex justify-center items-center text-center 
-                                text-white
-                                overflow-hidden 
-                                bg-gradient-to-bl from-indigo-800"
+        className="h-threequarters sm:h-threequarters flex 
+                                w-full items-center justify-center overflow-hidden 
+                                bg-gradient-to-bl
+                                from-indigo-800 
+                                text-center text-white"
       >
         <div className="absolute">
           <h1 className="font-handwriting text-4xl sm:text-6xl">
             I ❤ taking pictures.
           </h1>
-          <h2 className="py-5 max-w-3xl sm:text-xl font-extralight mx-8">
+          <h2 className="mx-8 max-w-3xl py-5 font-extralight sm:text-xl">
             I love shooting pics and making vids. Professionally, I enjoy
             shooting events, but in my free time I've done everything from
             nature to product photography. Check out some of my event shots
@@ -57,33 +57,33 @@ export default function Photography() {
         <motion.div
           layoutId="photographyHero"
           transition={constants.TRANSITION_SETTINGS}
-          className="object-cover min-h-full w-full -z-10"
-          style={photoImgStyle}
-        />
+          className="relative -z-10 h-full w-full object-cover"
+        >
+          <Image src="/photography.jpg" layout="fill" objectFit="cover" />
+        </motion.div>
       </div>
 
-      <div className="sm:grid sm:grid-cols-4 gap-4 m-2 sm:m-5">
+      <div className="w-full max-w-7xl gap-6 sm:mx-auto sm:my-10 sm:grid sm:grid-cols-4">
         {images.map(
           // hey, I'm literally taking images from a directory and applying a class name if they have a 'col-span-x' property in their name.
           // who needs a CMS, right?
-          (image, index) => ( 
+          (image, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, scale: 0.5 }}
               animate={{ opacity: 1, scale: 1 }}
-              className={`w-full h-full my-2 sm:my-0 ${
+              className={`relative m-4 h-96 overflow-hidden sm:m-0 ${
                 image.default.src.includes("col-span-2") && "sm:col-span-2"
               } ${image.default.src.includes("col-span-3") && "sm:col-span-3"}`}
             >
               <Image
                 key={index}
                 src={image.default.src}
-                width="100px"
-                height="100px"
+                layout="fill"
+                objectFit="cover"
                 alt={`Evgeny Astapov Photography Portfolio ${index + 1}`}
-                className="object-cover min-h-full"
                 loading="lazy"
-              ></Image>
+              />
             </motion.div>
           )
           // I really don't understand how a brain so large fits into my skull sometimes

@@ -1,24 +1,33 @@
-import { motion } from 'framer-motion'
-import React from 'react'
-import * as constants from '../../constants'
+import { motion } from "framer-motion";
+import React from "react";
+import * as constants from "../../constants";
+import Image from "next/image";
 
 // styles for the work image
 const workImgStyle = {
-    backgroundImage: "url(/work.jpg)",
-    backgroundSize: "cover",
-    backgroundPositionX: "65%",
-    backgroundPositionY: "40%"
-}
+  backgroundImage: "url(/work.jpg)",
+  backgroundSize: "cover",
+  backgroundPositionX: "65%",
+  backgroundPositionY: "40%",
+};
 
 export default function Work() {
-    return (
-        <div className="w-full h-screen
-                            flex justify-center items-center text-center 
-                            font-extralight text-2xl sm:text-4xl text-white font-roboto
-                            overflow-hidden 
-                            bg-gradient-to-bl from-pink-500">
-            <motion.div layoutId="workHero" transition={constants.TRANSITION_SETTINGS} className="object-cover min-h-full w-full -z-10" style={workImgStyle} />
-            <p className="absolute text-white mx-2">Page under construction 👀</p>
-        </div>
-    )
+  return (
+    <div
+      className="font-roboto flex
+                            h-screen w-full items-center justify-center 
+                            overflow-hidden bg-gradient-to-bl from-pink-500 text-center text-2xl
+                            font-extralight 
+                            text-white sm:text-4xl"
+    >
+      <motion.div
+        layoutId="workHero"
+        transition={constants.TRANSITION_SETTINGS}
+        className="relative -z-10 h-full w-full object-cover"
+      >
+        <Image src="/work.jpg" layout="fill" objectFit="cover" />
+      </motion.div>
+      <p className="absolute mx-2 text-white">Page under construction 👀</p>
+    </div>
+  );
 }

@@ -4,6 +4,7 @@ import { ReactTypical } from "@deadcoder0904/react-typical";
 import "@deadcoder0904/react-typical/dist/styles.min.css";
 import CardWithText from "../../components/CardWithText";
 import * as constants from "../../constants";
+import Image from "next/image";
 
 // styles for the programming image
 const progImgStyle = {
@@ -121,9 +122,10 @@ export default function Programming() {
         <motion.div
           layoutId="programmingHero"
           transition={constants.TRANSITION_SETTINGS}
-          className="object-cover min-h-full w-full -z-10"
-          style={progImgStyle}
-        />
+          className="relative -z-10 h-full w-full object-cover"
+        >
+          <Image src="/programming.jpg" layout="fill" objectFit="cover" />
+        </motion.div>
         <div className="absolute mx-2">
           <ReactTypical
             steps={[

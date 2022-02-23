@@ -1,6 +1,5 @@
 import { Html, Head, Main, NextScript } from "next/document";
 import Script from "next/script";
-import structured_data from "../public/structured_data.json";
 
 export default function Document() {
   return (
@@ -19,17 +18,10 @@ export default function Document() {
     `
           }}
         />
-        <Script
-          type="application/ld+json"
-          onLoad={() => console.log("ld+json loaded")}
-          onError={() => console.error("ld+json load failed")}
-          id="ld_json_script"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(structured_data) }}
-        />
         <link rel="icon" href="/logo.svg" />
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link
-          href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Righteous&family=Satisfy&family=Roboto&display=swap&subset=latin"
+          href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Righteous&family=Satisfy&family=Roboto+Mono&display=swap&subset=latin"
           rel="stylesheet"
         />
         {/* <meta name="viewport" content="width=device-width, initial-scale=1" /> */}

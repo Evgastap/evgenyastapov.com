@@ -4,6 +4,9 @@ import ProgressiveImage from "react-progressive-image";
 import * as constants from "../constants";
 import Link from "next/link";
 import { Head } from "next/document";
+import Script from "next/script";
+import structured_data from "../public/structured_data.json";
+import Image from "next/image";
 
 const parentDivVariants = {
   initial: {},
@@ -54,7 +57,6 @@ const homeCards = [
     link: "photography",
     caption: "Photography Evg",
     img: "/photography.jpg",
-    placeholder: "/photography_mini.jpg",
     layoutId: "photographyHero",
     alt: "Photography Evgeny Astapov",
     font: "font-handwriting",
@@ -63,7 +65,6 @@ const homeCards = [
     link: "programming",
     caption: "Programming_Evg",
     img: "/programming.jpg",
-    placeholder: "/programming_mini.jpg",
     layoutId: "programmingHero",
     alt: "Programming Evgeny Astapov",
     font: "font-roboto",
@@ -72,7 +73,6 @@ const homeCards = [
     link: "work",
     caption: "Work Evg",
     img: "/work.jpg",
-    placeholder: "/work_mini.jpg",
     layoutId: "workHero",
     alt: "Work Evgeny Astapov",
     font: "font-lilita",
@@ -81,20 +81,27 @@ const homeCards = [
     link: "other",
     caption: "Other Evg",
     img: "/other.jpg",
-    placeholder: "/other_mini.jpg",
     layoutId: "otherHero",
     alt: "Other Evgeny Astapov",
     font: "font-righteous",
   },
 ];
 
+
 // to size the home element to the true size of a mobile screen
 
 export default function Home() {
   return (
     <>
+      <Script
+        type="application/ld+json"
+        onLoad={() => console.log("ld+json loaded")}
+        onError={() => console.error("ld+json load failed")}
+        id="ld_json_script"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structured_data) }}
+      />
       <motion.div
-        className="grid grid-rows-4 md:grid-cols-2 md:grid-rows-2 h-screen"
+        className="grid h-screen grid-rows-4 md:grid-cols-2 md:grid-rows-2"
         initial="initial"
         animate="animate"
         whileHover="hover"
@@ -108,31 +115,30 @@ export default function Home() {
             variants={cardVariants}
             exit={{ opacity: 0 }}
             key={card.link}
+            className="cursor-pointer"
           >
             <Link href={card.link}>
-              <div className="w-full h-full flex justify-center items-center overflow-hidden">
-                <ProgressiveImage
-                  src={card.img}
-                  delay={3000}
-                  placeholder={card.placeholder}
+              <div className="flex h-full w-full items-center justify-center overflow-hidden">
+                <motion.div
+                  layoutId={card.layoutId}
+                  variants={imageHover}
+                  inherit={true}
+                  className="relative h-full w-full"
+                  transition={[
+                    constants.TRANSITION_SETTINGS,
+                    constants.EASING_SETTINGS,
+                  ]}
                 >
-                  {(src: string | undefined) => (
-                    <motion.img
-                      layoutId={card.layoutId}
-                      variants={imageHover}
-                      inherit={true}
-                      transition={[
-                        constants.TRANSITION_SETTINGS,
-                        constants.EASING_SETTINGS,
-                      ]}
-                      src={src}
-                      className="object-cover min-h-full"
-                      alt={card.alt}
-                    />
-                  )}
-                </ProgressiveImage>
+                  <Image
+                    src={card.img}
+                    priority
+                    layout="fill"
+                    objectFit="cover"
+                    alt={card.alt}
+                  ></Image>
+                </motion.div>
                 <motion.h1
-                  className={`absolute text-white text-4xl md:text-5xl font-thin ${card.font}`}
+                  className={`absolute text-4xl font-thin text-white md:text-5xl ${card.font}`}
                   variants={textHover}
                   inherit={true}
                   transition={[
