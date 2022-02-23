@@ -14,9 +14,9 @@ const workImgStyle = {
 export default function Work() {
   return (
     <div
-      className="font-roboto flex
-                            h-screen w-full items-center justify-center 
-                            overflow-hidden bg-gradient-to-bl from-pink-500 text-center text-2xl
+      className="flex h-screen
+                            w-full items-center justify-center overflow-hidden 
+                            bg-gradient-to-bl from-pink-500 text-center font-roboto text-2xl
                             font-extralight 
                             text-white sm:text-4xl"
     >

@@ -113,11 +113,11 @@ export default function Programming() {
   return (
     <div>
       <div
-        className="w-full h-threequarters sm:h-threequarters 
-                            flex justify-center items-center text-center 
-                            font-extralight text-2xl sm:text-4xl text-white font-roboto
-                            overflow-hidden 
-                            bg-gradient-to-bl from-green-500"
+        className="flex h-threequarters w-full 
+                            items-center justify-center overflow-hidden bg-gradient-to-bl 
+                            from-green-500 text-center font-roboto text-2xl font-extralight
+                            text-white 
+                            sm:h-threequarters sm:text-4xl"
       >
         <motion.div
           layoutId="programmingHero"
@@ -163,9 +163,11 @@ export default function Programming() {
         </div>
       </div>
 
-      <h2 className="text-4xl w-full text-center my-10 text-gray-900 dark:text-white">Sites I've built</h2>
+      <h2 className="my-10 w-full text-center text-4xl text-gray-900 dark:text-white">
+        Sites I've built
+      </h2>
 
-      <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-4 px-5 mb-10 max-w-7xl items-center mx-auto">
+      <div className="mx-auto mb-10 grid w-full max-w-7xl grid-cols-1 items-center gap-4 px-5 md:grid-cols-2">
         <CardWithText
           tags="WordPress, Design"
           title="Erasmus Centre for Data Analytics"
@@ -193,25 +195,25 @@ export default function Programming() {
         />
       </div>
 
-      <h2 className="text-2xl sm:text-4xl w-full text-center mt-5 sm:my-10 text-gray-900 dark:text-white">
+      <h2 className="mt-5 w-full text-center text-2xl text-gray-900 dark:text-white sm:my-10 sm:text-4xl">
         But... Can Evg backend?
       </h2>
 
-      <section className="flex flex-col max-w-4xl mx-auto sm:my-5 mb-5 overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800 md:flex-row md:h-48">
-        <div className="md:flex md:items-center md:justify-center md:w-1/2 md:bg-gray-700 md:dark:bg-gray-800">
+      <section className="mx-auto mb-5 flex max-w-4xl flex-col overflow-hidden rounded-lg bg-white shadow-lg dark:bg-gray-800 sm:my-5 md:h-48 md:flex-row">
+        <div className="md:flex md:w-1/2 md:items-center md:justify-center md:bg-gray-700 md:dark:bg-gray-800">
           <div className="px-6 py-6 md:px-8 md:py-0">
             {roasts.length === 0 && (
               <>
-                <h4 className="text-xs font-medium text-green-500 uppercase dark:text-blue-400 text-center my-2">
+                <h4 className="my-2 text-center text-xs font-medium uppercase text-green-500 dark:text-blue-400">
                   Introducing
                 </h4>
-                <h2 className="text-lg font-bold text-gray-700 dark:text-white md:text-gray-100 text-center">
+                <h2 className="text-center text-lg font-bold text-gray-700 dark:text-white md:text-gray-100">
                   Roast my Git
                 </h2>
               </>
             )}
 
-            <p className="mt-2 text-sm text-gray-600 dark:text-gray-400 md:text-gray-200 text-justify">
+            <p className="mt-2 text-justify text-sm text-gray-600 dark:text-gray-400 md:text-gray-200">
               {roasts.length === 0 ? (
                 <span>
                   How <b>dare</b> you assume that I can't backend? I mean, I'm
@@ -226,7 +228,7 @@ export default function Programming() {
         </div>
 
         <div className="m-auto align-middle">
-          <div className="w-full flex items-center justify-center mb-5">
+          <div className="mb-5 flex w-full items-center justify-center">
             {roasts.length === 0 ? (
               <svg
                 width="64"
@@ -251,11 +253,11 @@ export default function Programming() {
               />
             )}
           </div>
-          <div className="flex items-center justify-center pb-6 md:py-0 w-full sm:mx-5">
+          <div className="flex w-full items-center justify-center pb-6 sm:mx-5 md:py-0">
             <form onSubmit={handleSubmit}>
-              <div className="flex flex-col overflow-hidden border rounded-lg dark:border-gray-600 lg:flex-row">
+              <div className="flex flex-col overflow-hidden rounded-lg border dark:border-gray-600 lg:flex-row">
                 <input
-                  className="px-6 py-3 text-gray-700 placeholder-gray-500 bg-white outline-none dark:bg-gray-800 dark:placeholder-gray-400 focus:placeholder-transparent dark:focus:placeholder-transparent"
+                  className="bg-white px-6 py-3 text-gray-700 placeholder-gray-500 outline-none focus:placeholder-transparent dark:bg-gray-800 dark:placeholder-gray-400 dark:focus:placeholder-transparent"
                   type="text"
                   name="git"
                   placeholder="Enter your github"
@@ -263,7 +265,7 @@ export default function Programming() {
                   value={username}
                   onChange={handleChange}
                 />
-                <button className="px-4 py-3 text-sm font-medium tracking-wider text-gray-100 uppercase transition-colors duration-200 transform bg-gray-700 hover:bg-gray-600 focus:bg-gray-600 focus:outline-none">
+                <button className="transform bg-gray-700 px-4 py-3 text-sm font-medium uppercase tracking-wider text-gray-100 transition-colors duration-200 hover:bg-gray-600 focus:bg-gray-600 focus:outline-none">
                   {roasts.length === 0 ? "Roast me" : "Again"}
                 </button>
               </div>

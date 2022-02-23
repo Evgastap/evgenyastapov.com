@@ -87,7 +87,6 @@ const homeCards = [
   },
 ];
 
-
 // to size the home element to the true size of a mobile screen
 
 export default function Home() {

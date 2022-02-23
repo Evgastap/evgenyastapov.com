@@ -15,7 +15,7 @@ export default function Document() {
     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     'https://sgtm.evgenyastapov.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })
-    `
+    `,
           }}
         />
         <link rel="icon" href="/logo.svg" />
@@ -28,7 +28,6 @@ export default function Document() {
         <meta name="theme-color" content="#080808" />
         <link rel="apple-touch-icon" href="/logo.svg" />
         <link rel="manifest" href="/manifest.json" />
-
       </Head>
 
       <body className="dark:bg-gray-900">

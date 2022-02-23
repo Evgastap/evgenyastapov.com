@@ -35,14 +35,14 @@ function CardWithText(props: Props) {
       variants={cardVariants}
       whileHover="hover"
       whileTap="tap"
-      className="max-w-2xl overflow-hidden bg-white rounded-lg shadow-md h-full w-full dark:bg-gray-800"
+      className="h-full w-full max-w-2xl overflow-hidden rounded-lg bg-white shadow-md dark:bg-gray-800"
       href={props.url}
       target="_blank"
       rel="noreferrer"
     >
-      <div className="w-full h-64 overflow-hidden">
+      <div className="h-64 w-full overflow-hidden">
         <motion.img
-          className="object-cover min-h-full"
+          className="min-h-full object-cover"
           src={props.image}
           alt={props.title}
           variants={imageVariants}
@@ -52,12 +52,12 @@ function CardWithText(props: Props) {
       </div>
 
       <div className="flex flex-col p-6">
-        <span className="text-xs font-medium text-green-500 uppercase dark:text-blue-400">
+        <span className="text-xs font-medium uppercase text-green-500 dark:text-blue-400">
           {props.tags}
         </span>
         <motion.p
           // href="#"
-          className="block mt-2 text-2xl font-semibold text-gray-900 dark:text-white"
+          className="mt-2 block text-2xl font-semibold text-gray-900 dark:text-white"
           variants={textVariants}
         >
           {props.title}

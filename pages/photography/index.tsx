@@ -28,11 +28,11 @@ export default function Photography() {
   return (
     <div>
       <div
-        className="h-threequarters sm:h-threequarters flex 
-                                w-full items-center justify-center overflow-hidden 
-                                bg-gradient-to-bl
-                                from-indigo-800 
-                                text-center text-white"
+        className="flex h-threequarters w-full 
+                                items-center justify-center overflow-hidden bg-gradient-to-bl 
+                                from-indigo-800
+                                text-center 
+                                text-white sm:h-threequarters"
       >
         <div className="absolute">
           <h1 className="font-handwriting text-4xl sm:text-6xl">

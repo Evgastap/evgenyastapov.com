@@ -16,6 +16,7 @@ Available on [evgenyastapov.com](https://evgenyastapov.com/)
 - `typescript` - because starting without typescript and converting the entire project to TS half-way though is the best kind of fun
 
 ## TODOs:
+
 - Home animation: when card is clicked, first fade all the other cards away before zooming in on the new page
 - Subset fonts to only used characters
 - Lazy load & animate image cards on `/photography`
