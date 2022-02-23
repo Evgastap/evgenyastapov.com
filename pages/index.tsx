@@ -1,9 +1,7 @@
 import React, { useEffect } from "react";
 import { motion, AnimatePresence, AnimateSharedLayout } from "framer-motion";
-import ProgressiveImage from "react-progressive-image";
 import * as constants from "../constants";
 import Link from "next/link";
-import { Head } from "next/document";
 import Script from "next/script";
 import structured_data from "../public/structured_data.json";
 import Image from "next/image";
