@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import React from "react";
 import * as constants from "../../constants";
-import Image from "next/image";
+import CloudflareImage from "../../components/CloudflareImage";
 
 export default function Work() {
   return (
@@ -17,7 +17,7 @@ export default function Work() {
         transition={constants.TRANSITION_SETTINGS}
         className="relative -z-10 h-full w-full object-cover"
       >
-        <Image src="/work.jpg" layout="fill" objectFit="cover" />
+        <CloudflareImage src="/work.jpg" layout="fill" objectFit="cover" />
       </motion.div>
       <p className="absolute mx-2 text-white">Page under construction 👀</p>
     </div>

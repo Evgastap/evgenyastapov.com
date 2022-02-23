@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { motion } from "framer-motion";
-import Image from "next/image";
 import React, { useEffect, useState } from "react";
+import CloudflareImage from "../../components/CloudflareImage";
 import * as constants from "../../constants";
 
 // TODO: add some shots from the old webiste
@@ -52,7 +52,7 @@ export default function Photography() {
           transition={constants.TRANSITION_SETTINGS}
           className="relative -z-10 h-full w-full object-cover"
         >
-          <Image src="/photography.jpg" layout="fill" objectFit="cover" />
+          <CloudflareImage src="/photography.jpg" layout="fill" objectFit="cover" />
         </motion.div>
       </div>
 
@@ -69,7 +69,7 @@ export default function Photography() {
                 image.default.src.includes("col-span-2") && "sm:col-span-2"
               } ${image.default.src.includes("col-span-3") && "sm:col-span-3"}`}
             >
-              <Image
+              <CloudflareImage
                 key={index}
                 src={image.default.src}
                 layout="fill"

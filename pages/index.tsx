@@ -3,7 +3,7 @@ import * as constants from "../constants";
 import Link from "next/link";
 import Script from "next/script";
 import structured_data from "../public/structured_data.json";
-import Image from "next/image";
+import CloudflareImage from "../components/CloudflareImage";
 
 const parentDivVariants = {
   initial: {},
@@ -125,13 +125,13 @@ export default function Home() {
                     constants.EASING_SETTINGS,
                   ]}
                 >
-                  <Image
+                  <CloudflareImage
                     src={card.img}
                     priority
                     layout="fill"
                     objectFit="cover"
                     alt={card.alt}
-                  ></Image>
+                  ></CloudflareImage>
                 </motion.div>
                 <motion.h1
                   className={`absolute text-4xl font-thin text-white md:text-5xl ${card.font}`}

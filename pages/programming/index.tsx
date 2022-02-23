@@ -4,7 +4,7 @@ import { ReactTypical } from "@deadcoder0904/react-typical";
 import "@deadcoder0904/react-typical/dist/styles.min.css";
 import CardWithText from "../../components/CardWithText";
 import * as constants from "../../constants";
-import Image from "next/image";
+import CloudflareImage from "../../components/CloudflareImage";
 
 export default function Programming() {
   const [username, setUsername] = useState<string>("");
@@ -116,7 +116,7 @@ export default function Programming() {
           transition={constants.TRANSITION_SETTINGS}
           className="relative -z-10 h-full w-full object-cover"
         >
-          <Image src="/programming.jpg" layout="fill" objectFit="cover" />
+          <CloudflareImage src="/programming.jpg" layout="fill" objectFit="cover" />
         </motion.div>
         <div className="absolute mx-2">
           <ReactTypical
