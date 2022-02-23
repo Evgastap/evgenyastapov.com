@@ -6,14 +6,6 @@ import CardWithText from "../../components/CardWithText";
 import * as constants from "../../constants";
 import Image from "next/image";
 
-// styles for the programming image
-const progImgStyle = {
-  backgroundImage: "url(/programming.jpg)",
-  backgroundSize: "cover",
-  backgroundPositionX: "45%",
-  backgroundPositionY: "45%",
-};
-
 export default function Programming() {
   const [username, setUsername] = useState<string>("");
   const [gitPictureUrl, setGitPictureUrl] = useState<string>("");
@@ -66,16 +58,16 @@ export default function Programming() {
 
     if (data.bio === null) {
       addedRoasts.push(
-        "Programming so much that you don't even have a git bio?"
+        "Programming so much that you don&apos;t even have a git bio?"
       );
     }
     if (data.company === null) {
       addedRoasts.push(
-        "Unemployed or so lazy that you don't even put your company on your git profile?"
+        "Unemployed or so lazy that you don&apos;t even put your company on your git profile?"
       );
     }
     if (data.blog === null) {
-      addedRoasts.push("TFW you don't even have a website in your bio");
+      addedRoasts.push("TFW you don&apos;t even have a website in your bio");
     }
     if (data.location === null) {
       addedRoasts.push("Too insecure to put your location on your profile?");
@@ -95,13 +87,13 @@ export default function Programming() {
     }
     if (data.twitter_username === null) {
       addedRoasts.push(
-        "Doesn't every dev flex their twitter in their github bio?"
+        "Doesn&apos;t every dev flex their twitter in their github bio?"
       );
     }
 
     addedRoasts.sort(() => Math.random() - 0.5);
     addedRoasts.push(
-      "Ok I've ran out of roasts... Maybe go to my git repo and add some more? ;)"
+      "Ok I&apos;ve ran out of roasts... Maybe go to my git repo and add some more? ;)"
     );
     setRoasts(addedRoasts);
   };
@@ -133,7 +125,7 @@ export default function Programming() {
               1500,
               "Hello!",
               1000,
-              "I'm Evgeny 👋",
+              "I&apos;m Evgeny 👋",
               1500,
               "I...",
               500,
@@ -164,7 +156,7 @@ export default function Programming() {
       </div>
 
       <h2 className="my-10 w-full text-center text-4xl text-gray-900 dark:text-white">
-        Sites I've built
+        Sites I&apos;ve built
       </h2>
 
       <div className="mx-auto mb-10 grid w-full max-w-7xl grid-cols-1 items-center gap-4 px-5 md:grid-cols-2">
@@ -216,9 +208,10 @@ export default function Programming() {
             <p className="mt-2 text-justify text-sm text-gray-600 dark:text-gray-400 md:text-gray-200">
               {roasts.length === 0 ? (
                 <span>
-                  How <b>dare</b> you assume that I can't backend? I mean, I'm
-                  not amazing at web-related backend, but I'm still trying to
-                  improve. This is why I introduce to you... Roast my git!
+                  How <b>dare</b> you assume that I can&apos;t backend? I mean,
+                  I&apos;m not amazing at web-related backend, but I&apos;m
+                  still trying to improve. This is why I introduce to you...
+                  Roast my git!
                 </span>
               ) : (
                 roasts[currentRoastIndex]
@@ -284,7 +277,7 @@ export default function Programming() {
                     <div className="px-12 py-6">
                             <p className="text-sm text-gray-600 dark:text-gray-400 justify-center">
                                 Well, to tell you the truth... I kinda suck at web-related backend. 
-                                I probably just haven't done enough of it. I'm getting better though!
+                                I probably just haven&apos;t done enough of it. I&apos;m getting better though!
                                 <br />
                                 So what better way to demonstrate that I suck at it, other than roasting YOUR github page?
                             </p>

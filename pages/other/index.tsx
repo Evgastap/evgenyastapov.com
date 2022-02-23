@@ -3,14 +3,6 @@ import React from "react";
 import * as constants from "../../constants";
 import Image from "next/image";
 
-// styles for the work image
-const otherImgStyle = {
-  backgroundImage: "url(/other.jpg)",
-  backgroundSize: "cover",
-  backgroundPositionX: "50%",
-  backgroundPositionY: "50%",
-};
-
 export default function Other() {
   return (
     <div

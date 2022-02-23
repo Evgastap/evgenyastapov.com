@@ -1,5 +1,4 @@
-import React, { useEffect } from "react";
-import { motion, AnimatePresence, AnimateSharedLayout } from "framer-motion";
+import { motion } from "framer-motion";
 import * as constants from "../constants";
 import Link from "next/link";
 import Script from "next/script";

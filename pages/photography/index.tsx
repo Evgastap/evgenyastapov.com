@@ -1,15 +1,8 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { motion } from "framer-motion";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import * as constants from "../../constants";
-
-// styles for the photography image
-const photoImgStyle = {
-  backgroundImage: "url(/photography.jpg)",
-  backgroundSize: "cover",
-  backgroundPositionX: "40%",
-  backgroundPositionY: "60%",
-};
 
 // TODO: add some shots from the old webiste
 
@@ -40,7 +33,7 @@ export default function Photography() {
           </h1>
           <h2 className="mx-8 max-w-3xl py-5 font-extralight sm:text-xl">
             I love shooting pics and making vids. Professionally, I enjoy
-            shooting events, but in my free time I've done everything from
+            shooting events, but in my free time I&apos;ve done everything from
             nature to product photography. Check out some of my event shots
             below ;)
           </h2>

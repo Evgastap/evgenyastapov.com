@@ -3,14 +3,6 @@ import React from "react";
 import * as constants from "../../constants";
 import Image from "next/image";
 
-// styles for the work image
-const workImgStyle = {
-  backgroundImage: "url(/work.jpg)",
-  backgroundSize: "cover",
-  backgroundPositionX: "65%",
-  backgroundPositionY: "40%",
-};
-
 export default function Work() {
   return (
     <div
