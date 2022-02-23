@@ -7,7 +7,7 @@ const cloudflareImageLoader = ({ src, width, quality }) => {
   if (!quality) {
     quality = 75
   }
-  return `${workerDomain}?width=${width}&quality=${quality}&image=${workerDomain}${src}`
+  return `${workerDomain}?width=${width}&quality=${quality}&image=${window.location.origin}${src}`
 }
 
 export default function Img(props) {
