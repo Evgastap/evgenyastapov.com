@@ -5,9 +5,13 @@
   "dependencies": {
     "@babel/runtime": "^7.17.2",
     "@deadcoder0904/react-typical": "^0.1.2",
+    "@typescript-eslint/eslint-plugin": "^5.12.1",
+    "@typescript-eslint/parser": "^5.12.1",
     "cssnano": "^5.0.17",
+    "eslint-plugin-react": "^7.28.0",
     "framer-motion": "^4.1.17",
     "next": "^12.1.0",
+    "next-on-netlify": "^3.0.1",
     "prettier": "^2.5.1",
     "prettier-plugin-tailwindcss": "^0.1.7",
     "react": "latest",
@@ -24,6 +28,7 @@
     "watch-ts": "tsc -w",
     "start": "next start",
     "build": "next build && next start && next export",
+    "postbuild": "next-on-netlify",
     "dev": "next dev",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
