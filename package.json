@@ -11,7 +11,7 @@
     "eslint-plugin-react": "^7.28.0",
     "framer-motion": "^4.1.17",
     "next": "^12.1.0",
-    "next-seo": "^5.1.0",
+    "next-seo": "latest",
     "next-sitemap": "^2.4.6",
     "prettier": "^2.5.1",
     "prettier-plugin-tailwindcss": "^0.1.7",
