@@ -5,6 +5,7 @@ import "@deadcoder0904/react-typical/dist/styles.min.css";
 import CardWithText from "../../components/CardWithText";
 import * as constants from "../../constants";
 import CloudflareImage from "../../components/CloudflareImage";
+import { NextSeo } from "next-seo";
 
 export default function Programming() {
   const [username, setUsername] = useState<string>("");
@@ -58,16 +59,16 @@ export default function Programming() {
 
     if (data.bio === null) {
       addedRoasts.push(
-        "Programming so much that you don&apos;t even have a git bio?"
+        "Programming so much that you don't even have a git bio?"
       );
     }
     if (data.company === null) {
       addedRoasts.push(
-        "Unemployed or so lazy that you don&apos;t even put your company on your git profile?"
+        "Unemployed or so lazy that you don't even put your company on your git profile?"
       );
     }
     if (data.blog === null) {
-      addedRoasts.push("TFW you don&apos;t even have a website in your bio");
+      addedRoasts.push("TFW you don't even have a website in your bio");
     }
     if (data.location === null) {
       addedRoasts.push("Too insecure to put your location on your profile?");
@@ -87,13 +88,13 @@ export default function Programming() {
     }
     if (data.twitter_username === null) {
       addedRoasts.push(
-        "Doesn&apos;t every dev flex their twitter in their github bio?"
+        "Doesn't every dev flex their twitter in their github bio?"
       );
     }
 
     addedRoasts.sort(() => Math.random() - 0.5);
     addedRoasts.push(
-      "Ok I&apos;ve ran out of roasts... Maybe go to my git repo and add some more? ;)"
+      "Ok I've ran out of roasts... Maybe go to my git repo and add some more? ;)"
     );
     setRoasts(addedRoasts);
   };
@@ -103,7 +104,8 @@ export default function Programming() {
   };
 
   return (
-    <div>
+    <>
+    <NextSeo title="Evgeny Astapov - Developer in the Netherlands" />
       <div
         className="flex h-threequarters w-full 
                             items-center justify-center overflow-hidden bg-gradient-to-bl 
@@ -125,7 +127,7 @@ export default function Programming() {
               1500,
               "Hello!",
               1000,
-              "I&apos;m Evgeny 👋",
+              "I'm Evgeny 👋",
               1500,
               "I...",
               500,
@@ -296,6 +298,6 @@ export default function Programming() {
                     </div>
                 </div>
             </div> */}
-    </div>
+    </>
   );
 }

@@ -4,6 +4,7 @@ import Link from "next/link";
 import Script from "next/script";
 import structured_data from "../public/structured_data.json";
 import CloudflareImage from "../components/CloudflareImage";
+import { LocalBusinessJsonLd } from "next-seo";
 
 const parentDivVariants = {
   initial: {},

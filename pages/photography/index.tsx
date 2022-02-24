@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import React, { useEffect, useState } from "react";
 import CloudflareImage from "../../components/CloudflareImage";
 import * as constants from "../../constants";
+import { LocalBusinessJsonLd, NextSeo } from "next-seo";
 
 // TODO: add some shots from the old webiste
 
@@ -19,7 +20,18 @@ export default function Photography() {
     setImages(listOfImages);
   }, []);
   return (
-    <div>
+    <>
+      <NextSeo title="Evgeny Astapov - Photographer in Rotterdam" />
+      <LocalBusinessJsonLd
+        type="Photographer"
+        id="https://evgenyastapov.com/#photograper"
+        address="Rotterdam, Netherlands"
+        name="Evgeny Astapov Photograpy"
+        description="Evgeny Astapov is a photographer based in Rotterdam. His work mainly consists of event photography, portraits, and travel photography."
+        url="https://evgenyastapov.com/photography"
+        sameAs={["https://instagram.com/evgastap"]}
+        
+      />
       <div
         className="flex h-threequarters w-full 
                                 items-center justify-center overflow-hidden bg-gradient-to-bl 
@@ -52,7 +64,11 @@ export default function Photography() {
           transition={constants.TRANSITION_SETTINGS}
           className="relative -z-10 h-full w-full object-cover"
         >
-          <CloudflareImage src="/photography.jpg" layout="fill" objectFit="cover" />
+          <CloudflareImage
+            src="/photography.jpg"
+            layout="fill"
+            objectFit="cover"
+          />
         </motion.div>
       </div>
 
@@ -85,6 +101,6 @@ export default function Photography() {
       {/* <div className="fixed h-screen w-screen">
                     <img src={listOfImages[1].default} className="absolute z-10 w-full max-h-1/2" alt="" />
                 </div> */}
-    </div>
+    </>
   );
 }
