@@ -30,7 +30,6 @@ export default function Photography() {
         description="Evgeny Astapov is a photographer based in Rotterdam. His work mainly consists of event photography, portraits, and travel photography."
         url="https://evgenyastapov.com/photography"
         sameAs={["https://instagram.com/evgastap"]}
-        
       />
       <div
         className="flex h-threequarters w-full 

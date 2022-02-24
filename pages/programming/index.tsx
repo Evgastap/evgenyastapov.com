@@ -105,7 +105,7 @@ export default function Programming() {
 
   return (
     <>
-    <NextSeo title="Evgeny Astapov - Developer in the Netherlands" />
+      <NextSeo title="Evgeny Astapov - Developer in the Netherlands" />
       <div
         className="flex h-threequarters w-full 
                             items-center justify-center overflow-hidden bg-gradient-to-bl 
@@ -118,7 +118,11 @@ export default function Programming() {
           transition={constants.TRANSITION_SETTINGS}
           className="relative -z-10 h-full w-full object-cover"
         >
-          <CloudflareImage src="/programming.jpg" layout="fill" objectFit="cover" />
+          <CloudflareImage
+            src="/programming.jpg"
+            layout="fill"
+            objectFit="cover"
+          />
         </motion.div>
         <div className="absolute mx-2">
           <ReactTypical
