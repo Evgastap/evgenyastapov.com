@@ -13,6 +13,7 @@ function MyApp({ Component, pageProps }: AppProps) {
             url: "https://evgenyastapov.com",
             description: "Hi! I'm Evgeny, a photographer, tech guy and all-around creative. Everything from web design, to coding, to growth marketing and photography - I've done it all.",
             site_name: "Evgeny Astapov - Photographer, tech guy & all-around creative.",
+            title: "Evgeny Astapov - Photographer, tech guy & all-around creative.",
             profile: {
               firstName: "Evgeny",
               lastName: "Astapov",
