@@ -131,6 +131,7 @@ export default function Home() {
                     priority
                     layout="fill"
                     objectFit="cover"
+                    sizes= "(max-width: 768px) 100vw, 50vw"
                     alt={card.alt}
                   ></CloudflareImage>
                 </motion.div>
