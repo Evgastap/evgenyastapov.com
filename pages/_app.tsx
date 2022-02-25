@@ -13,6 +13,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           type: "website",
           locale: "en_IE",
           url: "https://evgenyastapov.com",
+          images: [{url: "https://evgenyastapov.com/meta.jpg", alt: "Evgeny Astapov - Photographer, tech guy & all-around creative.", height: 627, width: 1200}],
           description:
             "Hi! I'm Evgeny, a photographer, tech guy and all-around creative. Everything from web design, to coding, to growth marketing and photography - I've done it all.",
           site_name:

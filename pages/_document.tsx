@@ -4,7 +4,7 @@ export default function Document() {
   return (
     <Html>
       <Head>
-        <script src="https://cmp.osano.com/16BZEZSDfOgpzwGs/88d34647-c256-4f66-8100-98695949e5ba/osano.js"></script>
+        {/* <script src="https://cmp.osano.com/16BZEZSDfOgpzwGs/88d34647-c256-4f66-8100-98695949e5ba/osano.js"></script> */}
         <script src="https://sgtm.evgenyastapov.com/gtm.js?id=GTM-K86WSC8" />
         <script
           data-cookieconsent="ignore"
