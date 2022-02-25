@@ -4,7 +4,6 @@ import Link from "next/link";
 import Script from "next/script";
 import structured_data from "../public/structured_data.json";
 import CloudflareImage from "../components/CloudflareImage";
-import { LocalBusinessJsonLd } from "next-seo";
 
 const parentDivVariants = {
   initial: {},
@@ -131,7 +130,7 @@ export default function Home() {
                     priority
                     layout="fill"
                     objectFit="cover"
-                    sizes= "(max-width: 768px) 100vw, 50vw"
+                    sizes="(max-width: 768px) 100vw, 50vw"
                     alt={card.alt}
                   ></CloudflareImage>
                 </motion.div>
