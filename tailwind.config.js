@@ -1,33 +1,30 @@
 module.exports = {
-  important: true,
-  mode: "jit",
-  //Purging for Production is configured in PostCSS Config
-  purge:{    
-    content: ["./src/**/*.html", "./src/**/*.jsx", "./src/**/*.js", "./src/**/*.tsx", "./src/**/*.ts",],
-  },
+  content: [
+    "./pages/**/*.{js,ts,jsx,tsx}",
+    "./components/**/*.{js,ts,jsx,tsx}",
+  ],
   theme: {
     fontFamily: {
-      'handwriting': ['Satisfy'],
-      'lilita': ['Lilita One'],
-      'righteous': ['Righteous'],
-      'roboto': ['Roboto Mono'],
+      handwriting: ["Satisfy"],
+      lilita: ["Lilita One"],
+      righteous: ["Righteous"],
+      roboto: ["Roboto Mono"],
     },
     extend: {
       zIndex: {
-        '-10': '-10',
+        "-10": "-10",
       },
       height: {
-        'quarter': '25vh',
-        'half': '50vh',
-        'threequarters': '75vh',
+        quarter: "25vh",
+        half: "50vh",
+        threequarters: "75vh",
       },
       maxHeight: {
-        '1/4': '25vh',
-        '1/3': '33vh',
-        '1/2': '50vh'
-      }
+        "1/4": "25vh",
+        "1/3": "33vh",
+        "1/2": "50vh",
+      },
     },
   },
-  variants: {},
   plugins: [],
 };
