@@ -1,7 +1,7 @@
 import Image from "next/image";
 
 const workerDomain = "https://next-images.evgastap.workers.dev";
-const cloudflareDomain = "https://evgenyastapov-com.pages.dev";
+const cloudflareDomain = "https://evgenyastapov.com";
 
 // replace [yourprojectname] and [yourdomain.com] with your actual project name and (custom) domain
 const cloudflareImageLoader = ({ src, width, quality }) => {
