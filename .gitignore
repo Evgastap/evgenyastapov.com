@@ -20,3 +20,6 @@ yarn.lock
 /out_publish/
 /out_functions/
 .vercel
+
+# Sentry
+.sentryclirc

@@ -5,6 +5,7 @@
   "dependencies": {
     "@babel/runtime": "^7.17.2",
     "@deadcoder0904/react-typical": "^0.1.2",
+    "@sentry/nextjs": "^6.18.2",
     "cssnano": "^5.0.17",
     "framer-motion": "^4.1.17",
     "next": "^12.1.0",
