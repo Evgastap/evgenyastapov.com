@@ -184,6 +184,13 @@ export default function Programming() {
                                     It does run on WordPress, but it was the first site I ever built. Not bad, if I dare say so myself."
         />
         <CardWithText
+          tags="Next.js, Typescript, Vercel"
+          title="10kreader"
+          image="10kreader.png"
+          url="https://www.10kreader.com"
+          description="Passion project of a friend that I'm helping with. While I definitely only coded some parts of 10kreader, I like to think I'd had quite an impact on the its direction."
+        />
+        <CardWithText
           tags="Typesript, React, Game"
           title="Aesthetic typer"
           image="aesthetictyper.png"
