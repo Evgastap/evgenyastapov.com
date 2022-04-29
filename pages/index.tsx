@@ -47,6 +47,7 @@ interface Card {
   layoutId: string;
   alt: string;
   font: string;
+  cardWidth: string;
 }
 
 const homeCards = [
@@ -57,6 +58,7 @@ const homeCards = [
     layoutId: "photographyHero",
     alt: "Photography Evgeny Astapov",
     font: "font-handwriting",
+    cardWidth: "md:col-span-3"
   },
   {
     link: "programming",
@@ -65,6 +67,16 @@ const homeCards = [
     layoutId: "programmingHero",
     alt: "Programming Evgeny Astapov",
     font: "font-roboto",
+    cardWidth: "md:col-span-3"
+  },
+  {
+    link: "videos",
+    caption: "Video Evg",
+    img: "/video.jpg",
+    layoutId: "videoHero",
+    alt: "Video Evgeny Astapov",
+    font: "font-roboto",
+    cardWidth: "md:col-span-2"
   },
   {
     link: "work",
@@ -73,6 +85,7 @@ const homeCards = [
     layoutId: "workHero",
     alt: "Work Evgeny Astapov",
     font: "font-lilita",
+    cardWidth: "md:col-span-2"
   },
   {
     link: "other",
@@ -81,6 +94,7 @@ const homeCards = [
     layoutId: "otherHero",
     alt: "Other Evgeny Astapov",
     font: "font-righteous",
+    cardWidth: "md:col-span-2"
   },
 ];
 
@@ -97,7 +111,7 @@ export default function Home() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structured_data) }}
       />
       <motion.div
-        className="grid h-screen grid-rows-4 md:grid-cols-2 md:grid-rows-2"
+        className="grid h-screen grid-rows-5 md:grid-cols-6 md:grid-rows-2"
         initial="initial"
         animate="animate"
         whileHover="hover"
@@ -111,7 +125,7 @@ export default function Home() {
             variants={cardVariants}
             exit={{ opacity: 0 }}
             key={card.link}
-            className="cursor-pointer"
+            className={`cursor-pointer ${card.cardWidth}`}
           >
             <Link href={card.link}>
               <div className="flex h-full w-full items-center justify-center overflow-hidden">
