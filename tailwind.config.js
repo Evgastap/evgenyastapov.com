@@ -9,6 +9,7 @@ module.exports = {
       lilita: ["Lilita One"],
       righteous: ["Righteous"],
       roboto: ["Roboto Mono"],
+      koulen: ["Koulen"]
     },
     extend: {
       zIndex: {

@@ -75,7 +75,7 @@ const homeCards = [
     img: "/video.jpg",
     layoutId: "videoHero",
     alt: "Video Evgeny Astapov",
-    font: "font-roboto",
+    font: "font-koulen",
     cardWidth: "md:col-span-2"
   },
   {
