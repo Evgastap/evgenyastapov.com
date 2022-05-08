@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import CloudflareImage from "../../components/CloudflareImage";
 import * as constants from "../../constants";
 import { LocalBusinessJsonLd, NextSeo } from "next-seo";
-import Vimeo from "@u-wave/react-vimeo";
+import ReactPlayer from "react-player";
 
 const vidArray = [
   "https://vimeo.com/705330486",
@@ -51,7 +51,7 @@ const index = () => {
       <div className="grid gap-3 lg:grid-cols-2 xl:grid-cols-3 md:mx-10 my-5">
         {vidArray.map((vid) => (
           <div className="flex h-full w-full items-center justify-center">
-            <Vimeo video={vid} />
+            <ReactPlayer url={vid} />
           </div>
         ))}
       </div>
