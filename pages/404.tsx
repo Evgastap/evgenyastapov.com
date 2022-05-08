@@ -1,4 +1,4 @@
-import CloudflareImage from "../components/CloudflareImage";
+import Image from "next/image";
 
 export default function Custom404() {
   return (
@@ -12,8 +12,8 @@ export default function Custom404() {
         </h2>
       </div>
       <div className="flex-coltext-white relative -z-10 h-screen w-screen">
-        <CloudflareImage
-          src="/Northern lights.jpg"
+        <Image
+          src="https://res.cloudinary.com/evgenyastapov-com/image/upload/v1651844346/Northern_lights_2_wanrue.jpg"
           layout="fill"
           objectFit="cover"
         />

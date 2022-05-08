@@ -4,8 +4,8 @@ import { ReactTypical } from "@deadcoder0904/react-typical";
 import "@deadcoder0904/react-typical/dist/styles.min.css";
 import CardWithText from "../../components/CardWithText";
 import * as constants from "../../constants";
-import CloudflareImage from "../../components/CloudflareImage";
 import { NextSeo } from "next-seo";
+import Image from "next/image";
 
 export default function Programming() {
   const [username, setUsername] = useState<string>("");
@@ -118,8 +118,8 @@ export default function Programming() {
           transition={constants.TRANSITION_SETTINGS}
           className="relative -z-10 h-full w-full object-cover"
         >
-          <CloudflareImage
-            src="/programming.jpg"
+          <Image
+            src="https://res.cloudinary.com/evgenyastapov-com/image/upload/v1651763847/home/programming_ar1bhs.jpg"
             layout="fill"
             objectFit="cover"
           />

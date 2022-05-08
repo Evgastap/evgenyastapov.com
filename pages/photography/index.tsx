@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import React, { useEffect, useState } from "react";
 import CloudflareImage from "../../components/CloudflareImage";
+import Image from "next/image";
 import * as constants from "../../constants";
 import { LocalBusinessJsonLd, NextSeo } from "next-seo";
 
@@ -62,8 +63,8 @@ export default function Photography() {
           transition={constants.TRANSITION_SETTINGS}
           className="relative -z-10 h-full w-full object-cover"
         >
-          <CloudflareImage
-            src="/photography.jpg"
+          <Image
+            src="https://res.cloudinary.com/evgenyastapov-com/image/upload/v1651763848/home/photography_e2fotc.jpg"
             layout="fill"
             objectFit="cover"
           />

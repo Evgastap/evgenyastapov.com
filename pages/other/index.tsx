@@ -1,8 +1,8 @@
 import { motion } from "framer-motion";
 import React from "react";
 import * as constants from "../../constants";
-import CloudflareImage from "../../components/CloudflareImage";
 import { NextSeo } from "next-seo";
+import Image from "next/image";
 
 export default function Other() {
   return (
@@ -20,7 +20,7 @@ export default function Other() {
           transition={constants.TRANSITION_SETTINGS}
           className="relative -z-10 h-full w-full object-cover"
         >
-          <CloudflareImage src="/other.jpg" layout="fill" objectFit="cover" />
+          <Image src="https://res.cloudinary.com/evgenyastapov-com/image/upload/v1651763847/home/other_k5dpry.jpg" layout="fill" objectFit="cover" />
         </motion.div>
         <p className="absolute mx-2 text-white">Page under construction 👀</p>
       </div>

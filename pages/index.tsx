@@ -3,7 +3,7 @@ import * as constants from "../constants";
 import Link from "next/link";
 import Script from "next/script";
 import structured_data from "../public/structured_data.json";
-import CloudflareImage from "../components/CloudflareImage";
+import Image from "next/image";
 
 const parentDivVariants = {
   initial: {},
@@ -54,7 +54,7 @@ const homeCards = [
   {
     link: "photography",
     caption: "Photography Evg",
-    img: "/photography.jpg",
+    img: "https://res.cloudinary.com/evgenyastapov-com/image/upload/v1651763848/home/photography_e2fotc.jpg",
     layoutId: "photographyHero",
     alt: "Photography Evgeny Astapov",
     font: "font-handwriting",
@@ -63,7 +63,7 @@ const homeCards = [
   {
     link: "programming",
     caption: "Programming_Evg",
-    img: "/programming.jpg",
+    img: "https://res.cloudinary.com/evgenyastapov-com/image/upload/v1651763847/home/programming_ar1bhs.jpg",
     layoutId: "programmingHero",
     alt: "Programming Evgeny Astapov",
     font: "font-roboto",
@@ -72,7 +72,7 @@ const homeCards = [
   {
     link: "videos",
     caption: "Video Evg",
-    img: "/video.jpg",
+    img: "https://res.cloudinary.com/evgenyastapov-com/image/upload/v1651763847/home/video_h1i6io.jpg",
     layoutId: "videoHero",
     alt: "Video Evgeny Astapov",
     font: "font-koulen",
@@ -81,7 +81,7 @@ const homeCards = [
   {
     link: "work",
     caption: "Work Evg",
-    img: "/work.jpg",
+    img: "https://res.cloudinary.com/evgenyastapov-com/image/upload/v1651763847/home/work_kvadag.jpg",
     layoutId: "workHero",
     alt: "Work Evgeny Astapov",
     font: "font-lilita",
@@ -90,7 +90,7 @@ const homeCards = [
   {
     link: "other",
     caption: "Other Evg",
-    img: "/other.jpg",
+    img: "https://res.cloudinary.com/evgenyastapov-com/image/upload/v1651763847/home/other_k5dpry.jpg",
     layoutId: "otherHero",
     alt: "Other Evgeny Astapov",
     font: "font-righteous",
@@ -139,14 +139,14 @@ export default function Home() {
                     constants.EASING_SETTINGS,
                   ]}
                 >
-                  <CloudflareImage
+                  <Image
                     src={card.img}
                     priority
                     layout="fill"
                     objectFit="cover"
                     sizes="(max-width: 768px) 100vw, 50vw"
                     alt={card.alt}
-                  ></CloudflareImage>
+                 />
                 </motion.div>
                 <motion.h1
                   className={`absolute text-4xl font-thin text-white md:text-5xl ${card.font}`}
