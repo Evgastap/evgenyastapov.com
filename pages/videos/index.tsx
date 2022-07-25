@@ -45,7 +45,7 @@ const index = () => {
           transition={constants.TRANSITION_SETTINGS}
           className="relative -z-10 h-full w-full object-cover"
         >
-          <Image src="https://res.cloudinary.com/evgenyastapov-com/image/upload/v1651763847/home/video_h1i6io.jpg" layout="fill" objectFit="cover" />
+          <Image src="v1651763847/home/video_h1i6io.jpg" layout="fill" objectFit="cover" />
         </motion.div>
       </div>
       <div className="grid gap-3 lg:grid-cols-2 xl:grid-cols-3 md:mx-10 my-5">

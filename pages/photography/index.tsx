@@ -4,21 +4,31 @@ import CloudflareImage from "../../components/CloudflareImage";
 import Image from "next/image";
 import * as constants from "../../constants";
 import { LocalBusinessJsonLd, NextSeo } from "next-seo";
+var cloudinary = require("cloudinary");
 
 // TODO: add some shots from the old webiste
 
-function importAll(r: any) {
-  return r.keys().map(r);
+export async function getStaticProps() {
+  // set up cloudinary config
+  cloudinary.config({
+    cloud_name: "evgenyastapov-com", // add your cloud_name
+    api_key: process.env.CLD_API_KEY, // add your api_key
+    api_secret: process.env.CLD_API_SECRET, // add your api_secret
+    secure: true,
+  });
+  // access all resources in folder
+  const imagesFetch = await cloudinary.v2.api.resources({
+    type: "upload",
+    prefix: "photography", 
+    max_results: 100
+  });
+  console.log(imagesFetch);
+  return {
+    props: { images: imagesFetch.resources.map((res) => res.public_id) },
+  };
 }
-export default function Photography() {
-  const [images, setImages] = useState<any[]>([]);
 
-  useEffect(() => {
-    const listOfImages = importAll(
-      require.context("../../public/portfolio/", false, /\.(png|jpe?g|svg)$/)
-    );
-    setImages(listOfImages);
-  }, []);
+export default function Photography({ images }) {
   return (
     <>
       <NextSeo title="Evgeny Astapov - Photographer in Rotterdam" />
@@ -64,7 +74,7 @@ export default function Photography() {
           className="relative -z-10 h-full w-full object-cover"
         >
           <Image
-            src="https://res.cloudinary.com/evgenyastapov-com/image/upload/v1651763848/home/photography_e2fotc.jpg"
+            src="v1651763848/home/photography_e2fotc.jpg"
             layout="fill"
             objectFit="cover"
           />
@@ -81,12 +91,12 @@ export default function Photography() {
               initial={{ opacity: 0, scale: 0.5 }}
               animate={{ opacity: 1, scale: 1 }}
               className={`relative m-4 h-96 overflow-hidden sm:m-0 ${
-                image.default.src.includes("col-span-2") && "sm:col-span-2"
-              } ${image.default.src.includes("col-span-3") && "sm:col-span-3"}`}
+                image.includes("col-span-2") && "sm:col-span-2"
+              } ${image.includes("col-span-3") && "sm:col-span-3"}`}
             >
-              <CloudflareImage
+              <Image
                 key={index}
-                src={image.default.src}
+                src={image}
                 layout="fill"
                 objectFit="cover"
                 alt={`Evgeny Astapov Photography Portfolio ${index + 1}`}

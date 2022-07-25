@@ -13,7 +13,7 @@ export default function Custom404() {
       </div>
       <div className="flex-coltext-white relative -z-10 h-screen w-screen">
         <Image
-          src="https://res.cloudinary.com/evgenyastapov-com/image/upload/v1651844346/Northern_lights_2_wanrue.jpg"
+          src="v1651844346/Northern_lights_2_wanrue.jpg"
           layout="fill"
           objectFit="cover"
         />

@@ -119,7 +119,7 @@ export default function Programming() {
           className="relative -z-10 h-full w-full object-cover"
         >
           <Image
-            src="https://res.cloudinary.com/evgenyastapov-com/image/upload/v1651763847/home/programming_ar1bhs.jpg"
+            src="v1651763847/home/programming_ar1bhs.jpg"
             layout="fill"
             objectFit="cover"
           />
