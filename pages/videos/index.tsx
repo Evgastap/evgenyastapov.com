@@ -55,7 +55,7 @@ const index = () => {
       <div className="my-5 grid gap-3 md:mx-10 lg:grid-cols-2 xl:grid-cols-3">
         {vidArray.map((vid) => (
           <div className="flex h-full w-full items-center justify-center">
-            <ReactPlayer url={vid} />
+            <ReactPlayer width={"100%"} url={vid} />
           </div>
         ))}
       </div>
