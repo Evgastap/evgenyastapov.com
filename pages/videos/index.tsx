@@ -19,10 +19,10 @@ const index = () => {
     <>
       <div
         className="flex h-threequarters w-full 
-                                items-center justify-center overflow-hidden bg-gradient-to-bl 
-                                from-orange-700
-                                text-center 
-                                text-white sm:h-threequarters"
+        items-center justify-center overflow-hidden bg-gradient-to-bl 
+        from-indigo-800
+        text-center 
+        text-white" 
       >
         <div className="absolute">
           <h1 className="font-koulen text-4xl sm:text-6xl">I film vids, too</h1>
@@ -45,10 +45,14 @@ const index = () => {
           transition={constants.TRANSITION_SETTINGS}
           className="relative -z-10 h-full w-full object-cover"
         >
-          <Image src="v1651763847/home/video_h1i6io.jpg" layout="fill" objectFit="cover" />
+          <Image
+            src="v1651763847/home/video_h1i6io.jpg"
+            layout="fill"
+            objectFit="cover"
+          />
         </motion.div>
       </div>
-      <div className="grid gap-3 lg:grid-cols-2 xl:grid-cols-3 md:mx-10 my-5">
+      <div className="my-5 grid gap-3 md:mx-10 lg:grid-cols-2 xl:grid-cols-3">
         {vidArray.map((vid) => (
           <div className="flex h-full w-full items-center justify-center">
             <ReactPlayer url={vid} />
