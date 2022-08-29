@@ -2,6 +2,7 @@ import "../styles/globals.css";
 import { AppProps } from "next/app";
 import { AnimateSharedLayout, AnimatePresence } from "framer-motion";
 import { DefaultSeo } from "next-seo";
+import Navbar from "../components/Navbar";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -33,6 +34,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         description="Hi! I'm Evgeny, a photographer, tech guy and all-around creative. Everything from web design, to coding, to growth marketing and photography - I've done it all."
       />
       <AnimatePresence exitBeforeEnter>
+        <Navbar />
         <Component {...pageProps} />
       </AnimatePresence>
     </AnimateSharedLayout>
